@@ -1,2 +1,92 @@
-body{
+:root {
+    --heading: 'Trocchi', serif;
+    --body-text: 'Lato', sans-serif;
+    --subheading: 'Oswald', sans-serif;
+    --accent: #0074D9;
+    --silver: #DDDDDD;
+    --unit: 10px;
+    --half: calc(var(--unit) * 0.5);
+    --border-width: 1px;
 }
+
+html {
+    font-family: var(--body-text);
+    font-size: var(--unit);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.title, .subtitle, .divider-accent, .logo {
+    text-align: center;
+}
+
+.wrapper {
+    font-size: var(--unit);
+}
+
+.row {
+}
+
+.logo {
+    font-size: calc(var(--unit) * 4);
+    font-family: var(--heading);
+}
+
+.title {
+    font-family: var(--heading);
+}
+
+.subtitle {
+    font-family: var(--subheading);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.divider {
+    border-style: solid;
+    border-bottom-width: var(--border-width);
+
+}
+
+.divider-bold {
+    --border-width: calc(var(--border-width) * 2);
+}
+
+.divider-extraBold {
+    --border-width: calc(var(--border-width) * 4);
+}
+
+.block-silver {
+    background: var(--silver);
+}
+
+.divider-accent {
+    color: var(--accent);
+}
+
+.divider-accent:before, .divider-accent:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-bottom-width: var(--border-width);
+    border-top-width: var(--border-width);
+    height: 2px;
+}
+
+.divider-accent:before {
+    left: 0;
+}
+
+.divider-accent:after {
+    right: 0;
+}
+
