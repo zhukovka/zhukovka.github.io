@@ -89,14 +89,14 @@ layout: default
                         {{ post.excerpt}}
                         <p class="post-date">
                             <time>
-                                {{post.date}}
+                                {{post.date | date_to_long_string}}
                             </time>
                         </p>
                     </div>
                 </div>
                 {% endfor %}
                 <div class="see-more">
-                    <a href="" class="see-more-link">
+                    <a href="/how-to" class="see-more-link">
                         see all how-to
                     </a>
                 </div>
@@ -115,14 +115,14 @@ layout: default
                         {{ post.excerpt}}
                         <p class="post-date">
                             <time>
-                                {{post.date}}
+                                {{post.date | date_to_long_string}}
                             </time>
                         </p>
                     </div>
                 </div>
                 {% endfor %}
                 <div class="see-more">
-                    <a href="" class="see-more-link">
+                    <a href="/react" class="see-more-link">
                         see all react
                     </a>
                 </div>
@@ -141,14 +141,14 @@ layout: default
                         {{ post.excerpt}}
                         <p class="post-date">
                             <time>
-                                {{post.date}}
+                                {{post.date | date_to_long_string}}
                             </time>
                         </p>
                     </div>
                 </div>
                 {% endfor %}
                 <div class="see-more">
-                    <a href="" class="see-more-link">
+                    <a href="/staff" class="see-more-link">
                         see all live
                     </a>
                 </div>

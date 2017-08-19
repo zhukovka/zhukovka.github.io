@@ -3,8 +3,8 @@ layout: post
 title:  "What is live"
 date:   2017-06-19 21:39:51 +0300
 description: This post is about live
-categories: staff
+categories: react
 tags: livestyle
 ---
 
-Kuku
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eius explicabo libero, repellat reprehenderit repudiandae?
