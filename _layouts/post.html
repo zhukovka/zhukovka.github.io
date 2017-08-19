@@ -22,7 +22,11 @@ layout: default
             {% endif %}
         </p>
     </header>
-
+    {% if page.video %}
+    <div class="embed-container">
+        <iframe src="{{page.video}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    {% endif %}
     <div class="post-content" itemprop="articleBody">
         <div class="post-content-body">
             {{ content }}

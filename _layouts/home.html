@@ -15,6 +15,13 @@ layout: default
                                 {{ post.title }}
                             </a>
                         </h3>
+                        <div>
+                            <p>
+                                <a href="{{ post.url | relative_url }}">
+                                    {{ post.excerpt | strip_html | truncate: 60 }}
+                                </a>
+                            </p>
+                        </div>
                     </div>
                     {% endfor %}
                 </nav>
@@ -28,7 +35,9 @@ layout: default
                         </a>
                     </h1>
                     <p class="subtitle">
-                        {{ latest.description}}
+                        <a href="{{ latest.url | relative_url }}">
+                            {{ latest.description}}
+                        </a>
                     </p>
                 </section>
             </div>
@@ -86,7 +95,9 @@ layout: default
                         </a>
                     </h1>
                     <div class="top-category-excerpt">
-                        {{ post.excerpt}}
+                        <p>
+                            {{ post.excerpt | strip_html }}
+                        </p>
                         <p class="post-date">
                             <time>
                                 {{post.date | date_to_long_string}}
@@ -169,19 +180,15 @@ layout: default
             <!--0-->
             {% if videos == 0 %}
             <div class="col-lg-9 last-xs">
-                <div class="video-post">
-                    <h3 class="category-heading">{{post.categories | first}}</h3>
-                    <h1 class="title">
-                        <a href="{{ post.url | relative_url }}">
-                            {{ post.title | escape}}
-                        </a>
-                    </h1>
-                </div>
+                {% include video-post.html %}
             </div>
             {% endif %}
             <!--1-->
             {% if videos == 1 %}
             {% assign video1 = post %}
+            <div class="col-lg-3">
+                {% include video-post.html %}
+            </div>
             {% endif %}
             <!--2-->
             {% if videos == 2 %}
@@ -191,24 +198,6 @@ layout: default
             <!--end-->
             {% endif %}
             {% endfor %}
-            <div class="col-lg-3">
-                <div class="video-post">
-                    <h3 class="category-heading">{{video1.categories | first}}</h3>
-                    <h1 class="title">
-                        <a href="{{ post.url | relative_url }}">
-                            {{ video1.title | escape}}
-                        </a>
-                    </h1>
-                </div>
-                <div class="video-post">
-                    <h3 class="category-heading">{{video2.categories | first}}</h3>
-                    <h1 class="title">
-                        <a href="{{ post.url | relative_url }}">
-                            {{ video2.title | escape}}
-                        </a>
-                    </h1>
-                </div>
-            </div>
         </div>
     </section>
 

@@ -1,0 +1,12 @@
+<div class="video-post">
+    <div class="embed-container">
+        <i class="material-icons">play_circle_outline</i>
+        <img src="{{post.thumb}}" alt="">
+    </div>
+    <h3 class="category-heading">{{post.categories | first}}</h3>
+    <h1 class="title">
+        <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape}}
+        </a>
+    </h1>
+</div>
