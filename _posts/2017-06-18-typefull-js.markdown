@@ -5,6 +5,8 @@ subtitle: Почему и кому это надо
 date: 2017-08-18 21:39:51 +0300
 description: Зачем нам нужен typefull javascript
 categories: staff featured
+video: https://www.youtube.com/embed/XJiRqW2Gf6o
+thumb: http://img.youtube.com/vi/XJiRqW2Gf6o/maxresdefault.jpg
 tags: blog
 ---
 
