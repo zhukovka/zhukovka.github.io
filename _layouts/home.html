@@ -10,16 +10,14 @@ layout: default
                 <nav class="recent">
                     {% for post in site.posts limit:2 offset:1%}
                     <div class="recent-post">
-                        <h3 class="title">
+                        <h1 class="title">
                             <a href="{{ post.url | relative_url }}">
                                 {{ post.title }}
                             </a>
-                        </h3>
+                        </h1>
                         <div>
                             <p>
-                                <a href="{{ post.url | relative_url }}">
-                                    {{ post.excerpt | strip_html | truncate: 60 }}
-                                </a>
+                                {{ post.description}}
                             </p>
                         </div>
                     </div>
@@ -80,7 +78,7 @@ layout: default
     </section>
     <section class="top-categories">
         <div class="row">
-            <div class="col-lg-4 top-categories-posts">
+            <div class="col-lg-4 col-sm-4 top-categories-posts">
                 <h1 class="top-category-heading">
                     <span class="arrow">
                         how-to
@@ -95,9 +93,6 @@ layout: default
                         </a>
                     </h1>
                     <div class="top-category-excerpt">
-                        <p>
-                            {{ post.excerpt | strip_html }}
-                        </p>
                         <p class="post-date">
                             <time>
                                 {{post.date | date_to_long_string}}
@@ -112,7 +107,7 @@ layout: default
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 top-categories-posts middle-column">
+            <div class="col-lg-4 col-sm-4 top-categories-posts middle-column">
                 <h1 class="top-category-heading"><span class="arrow">react</span></h1>
                 {% for post in site.categories.react limit:4%}
                 <div class="top-category-post">
@@ -123,7 +118,6 @@ layout: default
                         </a>
                     </h1>
                     <div class="top-category-excerpt">
-                        {{ post.excerpt}}
                         <p class="post-date">
                             <time>
                                 {{post.date | date_to_long_string}}
@@ -138,7 +132,7 @@ layout: default
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 top-categories-posts">
+            <div class="col-lg-4 col-sm-4 top-categories-posts">
                 <h1 class="top-category-heading"><span class="arrow">live</span></h1>
                 {% for post in site.categories.staff limit:4%}
                 <div class="top-category-post">
@@ -149,7 +143,6 @@ layout: default
                         </a>
                     </h1>
                     <div class="top-category-excerpt">
-                        {{ post.excerpt}}
                         <p class="post-date">
                             <time>
                                 {{post.date | date_to_long_string}}

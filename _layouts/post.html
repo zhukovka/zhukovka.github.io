@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <header class="post-header">
+    <div class="post-header">
         <h3 class="category-heading">{{ page.categories | array_to_sentence_string }}</h3>
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
         {% if page.subtitle %}
@@ -13,7 +13,7 @@ layout: default
         <p class="post-meta">
             <span class="post-date">
                 <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                    {% assign date_format = site.minima.date_format | default: "%-b %-d, %Y" %}
                     {{ page.date | date: date_format }}
                 </time>
             </span>
@@ -21,7 +21,7 @@ layout: default
             • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
             {% endif %}
         </p>
-    </header>
+    </div>
     {% if page.video %}
     <div class="embed-container">
         <iframe src="{{page.video}}" frameborder="0" allowfullscreen></iframe>
