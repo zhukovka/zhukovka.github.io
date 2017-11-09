@@ -30,4 +30,11 @@ class OfflineMessageView: UIView {
 }
 {% endhighlight %}
 
-[Код на github](https://github.com/zhukovka/iosplaygrounds/tree/create-view) 
+[Код на github](https://github.com/zhukovka/iosplaygrounds/tree/create-view)
+
+---
+**Swift Essentials - Second Edition** by Dr. Alex Blewitt
+
+Publisher: Packt Publishing
+Release Date: January 2016
+ISBN: 9781785888878
