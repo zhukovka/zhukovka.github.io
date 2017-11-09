@@ -8,14 +8,14 @@ layout: default
         <div class="row">
             <div class="col-xs-12 col-lg-3">
                 <nav class="recent">
-                    {% for post in site.posts limit:2 offset:1%}
+                    {% for post in site.posts limit:3 offset:1%}
                     <div class="recent-post">
                         <h1 class="title">
                             <a href="{{ post.url | relative_url }}">
                                 {{ post.title }}
                             </a>
                         </h1>
-                        <div>
+                        <div class="post-description">
                             <p>
                                 {{ post.description}}
                             </p>
@@ -81,10 +81,10 @@ layout: default
             <div class="col-lg-4 col-sm-4 top-categories-posts">
                 <h1 class="top-category-heading">
                     <span class="arrow">
-                        how-to
+                        ios
                     </span>
                 </h1>
-                {% for post in site.categories.how-to limit:4%}
+                {% for post in site.categories.ios limit:4%}
                 <div class="top-category-post">
                     <h3 class="category-heading">{{post.tags | first}}</h3>
                     <h1 class="title">
@@ -102,8 +102,8 @@ layout: default
                 </div>
                 {% endfor %}
                 <div class="see-more">
-                    <a href="/how-to" class="see-more-link">
-                        see all how-to
+                    <a href="/ios" class="see-more-link">
+                        see all ios
                     </a>
                 </div>
             </div>

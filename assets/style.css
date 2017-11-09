@@ -1,6 +1,7 @@
 :root {
     --accent: #0074D9;
     --black: #000;
+    --dark-gray: #66696b;
     --gray: #c7c7c7;
     --silver: #f6f7f7;
     --unit: 10px;
@@ -73,7 +74,6 @@ section {
 }
 
 p {
-    font-size: var(--body-text-size);
 }
 
 blockquote {
@@ -161,7 +161,9 @@ blockquote {
 }
 
 .post-description {
-
+    color: var(--dark-gray);
+    font-size: calc(var(--unit) * 1.4);
+    font-family: var(--text);
 }
 
 .post-content {
