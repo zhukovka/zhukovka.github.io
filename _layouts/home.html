@@ -50,6 +50,11 @@ layout: default
                                 {{ post.title | escape}}
                             </a>
                         </h1>
+                        <div class="post-description text-center">
+                            <p>
+                                {{ post.description}}
+                            </p>
+                        </div>
                         <div class="comment-divider"></div>
                     </div>
                     {% endfor %}
@@ -103,7 +108,7 @@ layout: default
                 {% endfor %}
                 <div class="see-more">
                     <a href="/ios" class="see-more-link">
-                        see all ios
+                        все в категории ios
                     </a>
                 </div>
             </div>
@@ -128,7 +133,7 @@ layout: default
                 {% endfor %}
                 <div class="see-more">
                     <a href="/react" class="see-more-link">
-                        see all react
+                        все в категории react
                     </a>
                 </div>
             </div>
@@ -153,7 +158,7 @@ layout: default
                 {% endfor %}
                 <div class="see-more">
                     <a href="/staff" class="see-more-link">
-                        see all live
+                        все в категории live
                     </a>
                 </div>
             </div>

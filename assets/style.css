@@ -394,18 +394,18 @@ blockquote {
 
 .comment-divider:before, .comment-divider:after {
     width: 25%;
-    border-style: dashed;
-    border-bottom-width: var(--border-width);
+    /*border-style: dashed;*/
+    /*border-bottom-width: var(--border-width);*/
 }
 
 .comment-divider:before {
-    content: '/*';
-    left: 25%;
+    content: '**/';
+    left: 50%;
 }
 
 .comment-divider:after {
-    content: '*/';
-    right: 25%;
+    content: '/**';
+    right: 50%;
     text-align: right;
 }
 
