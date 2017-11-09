@@ -491,3 +491,17 @@ blockquote {
     color: white;
     font-size: calc(var(--unit) * 10);
 }
+
+.highlighter-rouge{
+    color: var(--accent);
+}
+
+.language-swift .kd, .language-swift .k{
+    color: #B22798;
+}
+.language-swift .kt{
+    color: #6535AB;
+}
+.language-swift .nf{
+    color: #351C76;
+}
