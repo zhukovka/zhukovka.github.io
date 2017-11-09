@@ -2,7 +2,7 @@
 layout: post
 title:  "Кого читать. IOS"
 subtitle: "Где найти полезную информацию о разработке на iOS"
-date:   2017-05-18 21:39:51 +0300
+date: 2017-11-09 16:19:55 +0200
 description: Блоги и странички, которые следует читать разработчику iOS
 categories: ios
 comments: true
