@@ -18,7 +18,7 @@ email: helen.zhukova@gmail.com
 description:
   Helen Zhukova's blog about live
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://zhukovka.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Darvinov
 github_username:  zhukovka
 
