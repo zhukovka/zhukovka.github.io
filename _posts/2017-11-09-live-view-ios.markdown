@@ -3,14 +3,14 @@ layout: post
 title:  "Находка дня. Live View в Playground"
 subtitle: "Как разрабатывать UI в Playground"
 date: 2017-11-09 16:49:56 +0200
-description: Xcode позволяет симулировать экран в специальной среде, которая называется PlayGround
+description: Xcode позволяет симулировать экран в специальной среде, которая называется Playground
 categories: ios
 comments: true
 tags: blog
 ---
 
-С версии 8 Xcode позволяет симулировать экран в специальной среде, которая называется PlayGround.
-В Xcode9 начнем с нового PlayGround:
+С версии 8 Xcode позволяет симулировать экран в специальной среде, которая называется Playground.
+В Xcode9 начнем с нового Playground:
 
 ![start playground select view](/assets/images/ios/start-playground-view.png)
 
