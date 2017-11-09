@@ -6,6 +6,7 @@ date: 2017-11-09 16:19:55 +0200
 description: Блоги и странички, которые следует читать разработчику iOS
 categories: ios
 comments: true
+image: http://www.infomory.com/wp-content/uploads/2014/10/IOS7_Logo.png
 tags: blog
 ---
 

@@ -6,6 +6,7 @@ date: 2017-11-09 16:49:56 +0200
 description: Xcode позволяет симулировать экран в специальной среде, которая называется Playground
 categories: ios
 comments: true
+image: /assets/images/ios/start-playground-view.png
 tags: blog
 ---
 
@@ -20,3 +21,9 @@ tags: blog
 
 ![live view preview](/assets/images/ios/live-view.png)
 
+---
+
+**iOS 11 Swift Programming Cookbook** by Vandad Nahavandipoor
+
+Publisher: O'Reilly Media, Inc.
+ISBN: 9781491992470
