@@ -159,6 +159,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 }
 {% endhighlight %}
 
+И выглядеть это должно так:
+
+<img src="/assets/images/ios/simulation-tableview.png" alt="simulation tableview" style="height:560px;width:auto">
+
 [Код на github](https://github.com/zhukovka/iosProject/tree/simple-tableview)
 
 ---
