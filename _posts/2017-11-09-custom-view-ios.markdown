@@ -26,6 +26,9 @@ class OfflineMessageView: UIView {
     }
     func setupView() {
         //add subviews here
+        let view = UIView()
+        view.backgroundColor = .black
+        addSubview(view)
     }
 }
 {% endhighlight %}

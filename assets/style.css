@@ -499,9 +499,12 @@ blockquote {
 .language-swift .kd, .language-swift .k{
     color: #B22798;
 }
-.language-swift .kt{
+.language-swift .kt, .language-swift .o + .n{
     color: #6535AB;
 }
 .language-swift .nf{
     color: #351C76;
+}
+.language-swift .c1{
+    color: #007900;
 }
