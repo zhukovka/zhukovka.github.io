@@ -53,7 +53,8 @@ Lit-html использует возможность писать [тегиро�
 Вот как выглядит `TemplateResult` для такого шаблона:
 
 {% highlight html %}
-<div class="${classA}">${valueA}</div><div class="${classB}">${valueB}</div>
+<div class="${classA}">${valueA}</div>
+<div class="${classB}">${valueB}</div>
 {% endhighlight %}
 
 ![Teplate result](/assets/images/customelts/templateresult.png)
