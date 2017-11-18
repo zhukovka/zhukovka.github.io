@@ -496,15 +496,15 @@ blockquote {
     color: var(--accent);
 }
 
-.language-swift .kd, .language-swift .k{
+.language-swift .kd, .language-swift .k, .language-javascript .kr{
     color: #B22798;
 }
 .language-swift .kt, .language-swift .o + .n{
     color: #6535AB;
 }
-.language-swift .nf{
+.language-swift .nf, .language-javascript .nx{
     color: #351C76;
 }
-.language-swift .c1{
+.language-swift .c1, .language-javascript .c1{
     color: #007900;
 }
