@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Return HZ
+title: RETURN HZ
 email: helen.zhukova@gmail.com
-description:
-  Helen Zhukova's blog about live
+description: Helen Zhukova blog
+author: Helen Zhukova
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zhukovka.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: Darvinov
+twitter_username: return_hz
 github_username:  zhukovka
 
 permalink: /:categories/:title

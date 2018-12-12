@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Yeseva+One|Abril+Fatface');
+
 :root {
     --accent: #0074D9;
     --black: #000;
@@ -6,10 +8,12 @@
     --silver: #f6f7f7;
     --unit: 10px;
     --half: calc(var(--unit) * 0.5);
-    --heading: 'Cormorant Infant', serif;
+    --title: 'Abril Fatface', serif;
+    --heading: 'Yeseva One', serif;
     --body-text: 'Roboto', sans-serif;
+    --barcode: 'Libre Barcode 128 Text', sans-serif;
     --text: Georgia, "Times New Roman", times, serif;
-    --body-text-size: calc(var(--unit) * 1.8);
+    --body-text-size: calc(var(--unit) * 2.1);
     --subheading: 'Tenor Sans', sans-serif;
     --divider-heading: 'Six Caps', sans-serif;
     --category-heading: 'Open Sans', sans-serif;
@@ -173,7 +177,7 @@ blockquote {
 
 .post-content-body {
     font-family: var(--text);
-    font-size: calc(var(--unit) * 1.8);
+    font-size: var(--body-text-size);
     line-height: 1.83;
     max-width: 65ch;
 }
@@ -243,7 +247,7 @@ blockquote {
 
 .site-title {
     font-size: calc(var(--unit) * 8);
-    font-family: var(--heading);
+    font-family: var(--title);
     color: var(--black);
 }
 
@@ -316,6 +320,12 @@ blockquote {
     text-align: center;
 }
 
+.barcode {
+    font-family: var(--barcode);
+}
+.site-footer .barcode {
+    font-size: calc(var(--unit) * 4);
+}
 /*--------------*
 * DIVIDERS
 *---------------*/
@@ -492,19 +502,22 @@ blockquote {
     font-size: calc(var(--unit) * 10);
 }
 
-.highlighter-rouge{
+.highlighter-rouge {
     color: var(--accent);
 }
 
-.language-swift .kd, .language-swift .k, .language-javascript .kr{
+.language-swift .kd, .language-swift .k, .language-javascript .kr {
     color: #B22798;
 }
-.language-swift .kt, .language-swift .o + .n{
+
+.language-swift .kt, .language-swift .o + .n {
     color: #6535AB;
 }
-.language-swift .nf, .language-javascript .nx{
+
+.language-swift .nf, .language-javascript .nx {
     color: #351C76;
 }
-.language-swift .c1, .language-javascript .c1{
+
+.language-swift .c1, .language-javascript .c1 {
     color: #007900;
 }

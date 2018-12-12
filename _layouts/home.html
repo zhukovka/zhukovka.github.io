@@ -138,7 +138,7 @@ layout: default
                 </div>
             </div>
             <div class="col-lg-4 col-sm-4 top-categories-posts">
-                <h1 class="top-category-heading"><span class="arrow">live</span></h1>
+                <h1 class="top-category-heading"><span class="arrow">life</span></h1>
                 {% for post in site.categories.staff limit:4%}
                 <div class="top-category-post">
                     <h3 class="category-heading">{{post.tags | first}}</h3>
@@ -158,44 +158,10 @@ layout: default
                 {% endfor %}
                 <div class="see-more">
                     <a href="/staff" class="see-more-link">
-                        все в категории live
+                        все в категории life
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="videos-row">
-        <h1 class="section-heading">
-            <span class="section-title">
-                Videos
-            </span>
-        </h1>
-        <div class="row">
-            {% assign videos = 0 %}
-            {% for post in site.posts %}
-            <!--videos < 3-->
-            {% if post.video and videos < 3 %}
-            <!--0-->
-            {% if videos == 0 %}
-            <div class="col-lg-9 last-xs">
-                {% include video-post.html %}
-            </div>
-            {% endif %}
-            <!--1-->
-            {% if videos == 1 %}
-            {% assign video1 = post %}
-            <div class="col-lg-3">
-                {% include video-post.html %}
-            </div>
-            {% endif %}
-            <!--2-->
-            {% if videos == 2 %}
-            {% assign video2 = post %}
-            {% endif %}
-            {% assign videos = videos | plus: 1 %}
-            <!--end-->
-            {% endif %}
-            {% endfor %}
         </div>
     </section>
 

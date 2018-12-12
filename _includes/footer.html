@@ -4,7 +4,9 @@
 
         <div class="row">
             <div class="col-lg-9">
-
+                <p class="barcode">
+                    {{ site.author | escape }}
+                </p>
             </div>
             <div class="col-lg-3">
                 <h3 class="footer-heading"><span>Follow HZ</span></h3>
@@ -28,18 +30,8 @@
 
         <div class="footer-col-wrapper">
             <div class="footer-col footer-col-1">
-                <ul class="contact-list">
-                    <li>
-                        {% if site.author %}
-                        {{ site.author | escape }}
-                        {% else %}
-                        {{ site.title | escape }}
-                        {% endif %}
-                    </li>
-                    {% if site.email %}
-                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-                    {% endif %}
-                </ul>
+
+
             </div>
 
             <div class="footer-col footer-col-2">
