@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: RETURN HZ
 email: helen.zhukova@gmail.com
-description: Helen Zhukova blog
+description: Helen Zhukova blog about life, code, and life code
 author: Helen Zhukova
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zhukovka.github.io" # the base hostname & protocol for your site, e.g. http://example.com
