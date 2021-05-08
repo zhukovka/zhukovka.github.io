@@ -16,7 +16,5 @@
   <meta property="og:title"         content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
   <meta property="og:description"   content="{{ page.description }}" />
   <meta property="og:image"         content="{{ page.image | absolute_url }}" />
-  {% if jekyll.environment == 'production' and site.google_analytics %}
   {% include google-analytics.html %}
-  {% endif %}
 </head>
