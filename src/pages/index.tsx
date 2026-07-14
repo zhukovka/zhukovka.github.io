@@ -7,6 +7,7 @@ import { PostListItem } from '../components/PostListItem'
 import { Avatar } from '../components/Avatar'
 import { NewsletterPanel } from '../components/NewsletterPanel'
 import Layout from '../components/layout'
+import Seo from "../components/seo";
 
 const POSTS = [
   {
@@ -129,4 +130,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Lena Zhukova — Software Engineering Blog</title>
+export const Head: HeadFC = () => <Seo title="Home Page" />
