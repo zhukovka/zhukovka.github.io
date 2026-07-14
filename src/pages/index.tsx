@@ -6,6 +6,7 @@ import { SectionHeader } from '../components/SectionHeader'
 import { PostListItem } from '../components/PostListItem'
 import { Avatar } from '../components/Avatar'
 import { NewsletterPanel } from '../components/NewsletterPanel'
+import Layout from '../components/layout'
 
 const POSTS = [
   {
@@ -41,112 +42,26 @@ const TOPICS = [
   'CLI design',
 ]
 
-const section: React.CSSProperties = {
-  maxWidth: 'var(--content-max)',
-  margin: '0 auto',
-  padding: '90px var(--content-pad)',
-  borderBottom: '1px solid var(--border-1)',
-}
+const section = 'max-w-[var(--content-max)] mx-auto px-[var(--content-pad)] py-[90px] border-b border-[var(--border-1)]'
 
 const IndexPage: React.FC<PageProps> = () => {
   const [subscribed, setSubscribed] = React.useState(false)
 
   return (
-    <div style={{ color: 'var(--fg-1)', minHeight: '100vh', fontFamily: 'var(--font-display)' }}>
-      {/* Nav */}
-      <div
-        style={{
-          maxWidth: 'var(--content-max)',
-          margin: '0 auto',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '28px var(--content-pad)',
-        }}
-      >
-        <div
-          style={{
-            fontSize: 20,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-          }}
-        >
-          <span
-            style={{
-              width: 10,
-              height: 10,
-              borderRadius: 'var(--radius-sm)',
-              background: 'var(--accent)',
-              display: 'inline-block',
-            }}
-          />
-          Lena Zhukova
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            gap: 32,
-            fontSize: 14,
-            fontWeight: 500,
-            color: 'var(--fg-3)',
-          }}
-        >
-          <a href="#posts">Writing</a>
-          <a href="#topics">Topics</a>
-          <a href="#about">About</a>
-        </div>
-      </div>
-
+    <Layout pageTitle="Home Page">
       {/* Hero */}
-      <div
-        style={{
-          maxWidth: 'var(--content-max)',
-          margin: '0 auto',
-          padding: '80px var(--content-pad) 100px',
-          borderBottom: '1px solid var(--border-1)',
-        }}
-      >
-        <div
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: 13,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            color: 'var(--accent)',
-            marginBottom: 24,
-          }}
-        >
+      <div className="max-w-[var(--content-max)] mx-auto px-[var(--content-pad)] pt-[80px] pb-[100px] border-b border-[var(--border-1)]">
+        <div className="[font-family:var(--font-mono)] text-[13px] tracking-[0.08em] uppercase text-[var(--accent)] mb-[24px]">
           Personal blog / software engineering
         </div>
-        <h1
-          style={{
-            fontSize: 72,
-            lineHeight: 0.98,
-            fontWeight: 700,
-            letterSpacing: '-0.03em',
-            margin: '0 0 28px',
-            maxWidth: 900,
-          }}
-        >
+        <h1 className="text-[72px] leading-[0.98] font-bold tracking-[-0.03em] mt-0 mb-[28px] max-w-[900px]">
           Notes from the terminal, shipped as prose.
         </h1>
-        <p
-          style={{
-            fontSize: 20,
-            lineHeight: 1.6,
-            color: 'var(--fg-3)',
-            maxWidth: 600,
-            margin: '0 0 40px',
-          }}
-        >
+        <p className="text-[20px] leading-[1.6] text-[var(--fg-3)] max-w-[600px] mt-0 mb-[40px]">
           I build software for a living and write here about the parts that don't make it into the
-          changelog — distributed systems, developer tools, and the occasional rant about
-          abstractions.
+          changelog — distributed systems, developer tools, and the occasional rant about abstractions.
         </p>
-        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+        <div className="flex gap-4 flex-wrap">
           <Button variant="primary" icon={<span>→</span>}>
             Read the latest
           </Button>
@@ -155,7 +70,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </div>
 
       {/* Posts */}
-      <div id="posts" style={section}>
+      <div id="posts" className={section}>
         <SectionHeader title="Latest posts" meta={`0${POSTS.length} essays`} />
         {POSTS.map((p, i) => (
           <PostListItem key={i} {...p} />
@@ -163,18 +78,11 @@ const IndexPage: React.FC<PageProps> = () => {
       </div>
 
       {/* Topics */}
-      <div id="topics" style={section}>
-        <h2
-          style={{
-            fontSize: 32,
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            margin: '0 0 40px',
-          }}
-        >
+      <div id="topics" className={section}>
+        <h2 className="text-[32px] font-bold tracking-[-0.02em] mt-0 mb-[40px]">
           What I write about
         </h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14 }}>
+        <div className="flex flex-wrap gap-[14px]">
           {TOPICS.map((t) => (
             <Tag key={t}>{t}</Tag>
           ))}
@@ -184,71 +92,27 @@ const IndexPage: React.FC<PageProps> = () => {
       {/* About */}
       <div
         id="about"
-        style={{
-          ...section,
-          display: 'grid',
-          gridTemplateColumns: '220px 1fr',
-          gap: 56,
-          alignItems: 'start',
-        }}
+        className={`${section} grid grid-cols-[220px_1fr] gap-[56px] items-start`}
       >
         <Avatar />
         <div>
-          <h2
-            style={{
-              fontSize: 32,
-              fontWeight: 700,
-              letterSpacing: '-0.02em',
-              margin: '0 0 20px',
-            }}
-          >
-            About
-          </h2>
-          <p
-            style={{
-              fontSize: 17,
-              lineHeight: 1.7,
-              color: 'var(--fg-2)',
-              maxWidth: 640,
-              margin: '0 0 16px',
-            }}
-          >
+          <h2 className="text-[32px] font-bold tracking-[-0.02em] mt-0 mb-[20px]">About</h2>
+          <p className="text-[17px] leading-[1.7] text-[var(--fg-2)] max-w-[640px] mt-0 mb-[16px]">
             I'm a software engineer who cares too much about tooling and not enough about
             documentation. This blog is where I think out loud about system design, debugging war
             stories, and the abstractions that were supposed to help.
           </p>
-          <p style={{ fontSize: 17, lineHeight: 1.7, color: 'var(--fg-2)', maxWidth: 640, margin: 0 }}>
+          <p className="text-[17px] leading-[1.7] text-[var(--fg-2)] max-w-[640px] m-0">
             Previously at a couple of startups you've never heard of.
           </p>
         </div>
       </div>
 
       {/* Newsletter */}
-      <div
-        id="newsletter"
-        style={{
-          maxWidth: 'var(--content-max)',
-          margin: '0 auto',
-          padding: '90px var(--content-pad)',
-        }}
-      >
+      <div id="newsletter" className="max-w-[var(--content-max)] mx-auto px-[var(--content-pad)] py-[90px]">
         {subscribed ? (
-          <div
-            style={{
-              background: 'var(--accent)',
-              borderRadius: 'var(--radius-lg)',
-              padding: 64,
-              textAlign: 'center',
-            }}
-          >
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 700,
-                color: 'var(--on-accent)',
-                margin: 0,
-              }}
-            >
+          <div className="bg-[var(--accent)] rounded-[var(--radius-lg)] p-[64px] text-center">
+            <h2 className="text-[28px] font-bold text-[var(--on-accent)] m-0">
               You're in. Check your inbox →
             </h2>
           </div>
@@ -261,34 +125,15 @@ const IndexPage: React.FC<PageProps> = () => {
       </div>
 
       {/* Footer */}
-      <div
-        style={{
-          maxWidth: 'var(--content-max)',
-          margin: '0 auto',
-          padding: '40px var(--content-pad) 60px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: 16,
-        }}
-      >
-        <span style={{ fontSize: 13, color: 'var(--fg-6)' }}>© 2026 Lena Zhukova</span>
-        <div
-          style={{
-            display: 'flex',
-            gap: 24,
-            fontFamily: 'var(--font-mono)',
-            fontSize: 13,
-            color: 'var(--fg-4)',
-          }}
-        >
+      <div className="max-w-[var(--content-max)] mx-auto px-[var(--content-pad)] pt-[40px] pb-[60px] flex justify-between items-center flex-wrap gap-4">
+        <span className="text-[13px] text-[var(--fg-6)]">© 2026 Lena Zhukova</span>
+        <div className="flex gap-6 [font-family:var(--font-mono)] text-[13px] text-[var(--fg-4)]">
           <a href="#">GitHub</a>
           <a href="#">X / Twitter</a>
           <a href="#">RSS</a>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
