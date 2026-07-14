@@ -123,16 +123,6 @@ const IndexPage: React.FC<PageProps> = () => {
           />
         )}
       </div>
-
-      {/* Footer */}
-      <div className="max-w-[var(--content-max)] mx-auto px-[var(--content-pad)] pt-[40px] pb-[60px] flex justify-between items-center flex-wrap gap-4">
-        <span className="text-[13px] text-[var(--fg-6)]">© 2026 Lena Zhukova</span>
-        <div className="flex gap-6 [font-family:var(--font-mono)] text-[13px] text-[var(--fg-4)]">
-          <a href="#">GitHub</a>
-          <a href="#">X / Twitter</a>
-          <a href="#">RSS</a>
-        </div>
-      </div>
     </Layout>
   )
 }
