@@ -30,6 +30,9 @@
     "postcss": "^8.5.19",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "rehype-pretty-code": "^0.14.5",
+    "remark-gfm": "^3.0.1",
+    "shiki": "^4.5.0",
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {

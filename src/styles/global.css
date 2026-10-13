@@ -78,3 +78,74 @@
     transparent 6px 12px
   );
 }
+
+/*
+ * Long-form post body (MDX): code blocks, inline code, tables.
+ * Block highlighting is done at build time by rehype-pretty-code (github-light);
+ * the frame and background below come from the design tokens.
+ */
+@layer components {
+  .post-body pre {
+    margin: 0.5rem 0;
+    overflow-x: auto;
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+    padding: 1rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.65;
+    tab-size: 2;
+  }
+
+  /* Language label, taken from the fence info string */
+  .post-body pre[data-language]::before {
+    content: attr(data-language);
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .post-body pre[data-language='plaintext']::before,
+  .post-body pre[data-language='text']::before {
+    display: none;
+  }
+
+  .post-body pre code {
+    display: grid;
+    background: none;
+    padding: 0;
+    color: var(--color-ink);
+    font-size: inherit;
+  }
+
+  .post-body :not(pre) > code {
+    border: 1px solid var(--color-line);
+    background: var(--color-surface);
+    padding: 0.1em 0.35em;
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+  }
+
+  .post-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .post-body th,
+  .post-body td {
+    border: 1px solid var(--color-line);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .post-body th {
+    background: var(--color-surface);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+}

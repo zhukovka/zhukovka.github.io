@@ -1,0 +1,114 @@
+---
+title: "Don't pay for what you don't use: context management for coding agents"
+date: "2026-10-13"
+slug: "context-management-guide"
+tag: "Agents"
+read: "6 min"
+---
+
+Your coding agent has a fixed amount of working memory, and most setups burn a big slice of it before the first prompt is typed. The fix is one rule: don't pay for what you don't use.
+
+This post is based on Daisy Hollman's talk, [How Anthropic uses Claude Code: Agentic Software Engineering at Scale](https://www.youtube.com/watch?v=shZgedW15vg).
+
+## The window is a budget
+
+The context window is the one constraint that hasn't moved. Models got better and tasks got longer, but the ceiling sits at around 1 million tokens.
+
+Everything you load up front competes with the actual work: system prompts, tool definitions, instruction files, files the agent has read.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                      FIXED CONTEXT WINDOW (~1M TOKENS)                 │
+├───────────────────┬────────────────────────────────────────────────────┤
+│ Upfront overhead  │             Task execution workspace               │
+│ (system prompt,   │      (file reads, code edits, tool outputs,        │
+│ tool schemas,     │             reasoning and planning)                │
+│ unconditional     │                                                    │
+│ rules)            │                                                    │
+└───────────────────┴────────────────────────────────────────────────────┘
+```
+
+Think of it as running npm on an Arduino. On a desktop you can pull in a dozen dependencies and never notice. Here every token has a real cost in memory and money, so you can't dump a codebase or a docs site into the prompt and hope for the best.
+
+There's a second catch. Models read tokens up to 10x cheaper when the start of the prompt stays the same between turns, because it hits the cache. Anything that swaps rules in and out turn by turn, like an LRU cache for instructions, breaks that prefix and sends your bill up.
+
+## One principle: zero overhead
+
+Anything that is always loaded is always paid for. A big `CLAUDE.md` bundled with a plugin costs tokens on every turn, whether or not the turn has anything to do with it. Install a few of those and you've spent the budget before you started.
+
+So aim for tools that cost nothing while idle and only enter the context when something actually triggers them.
+
+## Four tools, four price tags
+
+- **Hooks** cost 0 tokens. They are local scripts that run outside the context, fired by events such as "a tool just finished". Use them for instant feedback: lint and type errors.
+- **Skills** cost a short description. The body loads into the main session only when the model picks the skill. Use them for domain guidelines and CLI workflows.
+- **Sub-agents** cost a short description. They work in their own isolated window and report back. Use them for heavy tasks that would otherwise flood the main session.
+- **Tool Search (MCP)** costs tool names only. Full schemas are fetched on demand through a search tool. Use it when you have a large fleet of MCP servers.
+
+## Pattern A: hooks as red squigglies
+
+An editor underlines your mistake the moment you make it. A hook can do the same for an agent.
+
+The hook runs after each edit, decides in a few cheap CPU cycles whether the edit matters, and only talks to the model when something is wrong. The rest of the time it costs nothing, and the agent never wastes tokens discovering the error at compile time ten steps later.
+
+```bash
+#!/bin/bash
+# post-tool-use-hook.sh (runs after each edit)
+INPUT=$(cat)
+FILE=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty')
+
+# Not a TypeScript file? Exit silently. Zero context spent.
+[[ "$FILE" == *.ts ]] || exit 0
+
+# Type-check, and speak up only if something is broken.
+if ! OUTPUT=$(npx tsc --noEmit 2>&1); then
+  echo "Type errors after editing $FILE:" >&2
+  echo "$OUTPUT" >&2
+  exit 2   # exit code 2 sends stderr back to the model
+fi
+```
+
+## Pattern B: skills as lazy system prompts
+
+A skill is a folder with a `SKILL.md`. Only the short front matter lives in the system prompt at startup. The detailed body is expanded when the model decides it needs it.
+
+```markdown
+---
+name: database-migrations
+description: "Instructions for creating and running PostgreSQL schema migrations using Prisma. Use when updating database models."
+---
+
+# Database Migration Guidelines
+1. Always run `npx prisma migrate dev --name <migration_name>` in dry-run mode first.
+2. Ensure backward compatibility for existing production tables.
+3. Check foreign key constraint definitions in `prisma/schema.prisma`.
+```
+
+The catch: in a huge monorepo with thousands of skills, even the descriptions add up. Keep each one short and specific.
+
+## Pattern C: don't load every MCP schema
+
+Connect a few dozen MCP servers and their JSON schemas can swallow the baseline prompt. Turn on Tool Search instead. Only tool names sit in the prompt, and the agent pulls the full schema through a search tool when it needs one.
+
+## Pattern D: keep engineering and memory apart
+
+These are two different layers, and mixing them gets messy.
+
+- **Context engineering** is what you write: hooks, skills, plugins. Static, versioned, shared across repos.
+- **Model memory** is what the model writes: notes it curates and re-reads at runtime.
+
+## When one agent becomes many
+
+Once you run several agents at once, the bottleneck stops being tokens and becomes you. A few habits keep it manageable:
+
+- **One git worktree per session**, so agents never overwrite each other's files.
+- **Name and color your sessions** with `/rename` and `/color`. Past a dozen parallel sessions, labels are the only way to find the right one.
+- **Let `/loop` poll long CI runs** instead of checking them by hand.
+- **Use auto mode** with its background classifier screening to skip permission prompts without going fully unguarded.
+
+## The short version
+
+- Load nothing you can fetch later.
+- Prefer hooks for feedback, skills for knowledge, sub-agents for heavy lifting.
+- Protect the start of the prompt so the cache keeps working.
+- Treat every always-on instruction as a recurring bill.
