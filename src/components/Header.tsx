@@ -3,9 +3,8 @@ import { Link } from 'gatsby'
 import { Button } from './Button'
 
 const NAV = [
-  { label: 'Writing', href: '/#writing' },
+  { label: 'Writing', href: '/posts' },
   { label: 'Topics', href: '/#topics' },
-  { label: 'Projects', href: '#' },
   { label: 'About', href: '#' },
 ]
 

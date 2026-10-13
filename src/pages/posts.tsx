@@ -1,17 +1,27 @@
 import React from 'react'
-import type { HeadFC, PageProps } from 'gatsby'
+import { graphql, type HeadFC, type PageProps } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { PostBrowser } from '../components/PostBrowser'
 import { NewsletterPanel } from '../components/NewsletterPanel'
 
-const PostsPage: React.FC<PageProps> = () => (
+const PostsPage: React.FC<PageProps<Queries.PostsPageQuery>> = ({ data }) => (
   <Layout pageTitle="Posts">
-    <PostBrowser />
+    <PostBrowser posts={data.allMdx.nodes} />
     <NewsletterPanel />
   </Layout>
 )
 
 export default PostsPage
+
+export const query = graphql`
+  query PostsPage {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        ...PostSummary
+      }
+    }
+  }
+`
 
 export const Head: HeadFC = () => <Seo title="Posts" />
