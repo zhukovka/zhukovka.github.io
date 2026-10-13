@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from './Button'
 import { MonoText } from './MonoText'
-import { ArtPlaceholder } from './ArtPlaceholder'
+import { StaticImage } from 'gatsby-plugin-image'
 
 export function Hero() {
   return (
@@ -20,7 +20,19 @@ export function Hero() {
           <MonoText size="xs">new essay every other tuesday · no tracking</MonoText>
         </div>
       </div>
-      <ArtPlaceholder />
+      <div className="flex min-h-[420px] items-end justify-end pt-12 pl-12">
+        <div className="h-full min-h-[380px] w-full overflow-hidden border-t border-l border-line">
+          <StaticImage
+            src="../images/hero.jpg"
+            alt="Halftone illustration of a person typing on a retro computer"
+            className="h-full w-full"
+            objectFit="cover"
+            objectPosition="70% 50%"
+            loading="eager"
+            placeholder="none"
+          />
+        </div>
+      </div>
     </section>
   )
 }
