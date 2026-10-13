@@ -1,17 +1,14 @@
 import React from 'react'
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+type InputProps = React.InputHTMLAttributes<HTMLInputElement>
 
 export function Input({ className, ...rest }: InputProps) {
   return (
     <input
       className={[
-        'px-[18px] py-[14px]',
-        'rounded-[var(--radius-pill)]',
-        'border-0 outline-none',
-        'text-[15px] [font-family:var(--font-display)]',
-        'bg-[var(--bg)] text-[var(--fg-1)]',
-        'w-[260px] box-border',
+        'min-w-[200px] flex-1 border border-ink bg-surface px-3.5 py-3',
+        'font-mono text-[15px] text-ink placeholder:text-muted outline-none',
+        'focus-visible:outline-2 focus-visible:outline-brand focus-visible:-outline-offset-2',
         className ?? '',
       ].join(' ')}
       {...rest}

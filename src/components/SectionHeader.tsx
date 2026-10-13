@@ -1,4 +1,5 @@
 import React from 'react'
+import { MonoText } from './MonoText'
 
 interface SectionHeaderProps {
   title: string
@@ -7,13 +8,9 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ title, meta }: SectionHeaderProps) {
   return (
-    <div className="flex justify-between items-baseline mb-[48px]">
-      <h2 className="text-[var(--text-h2-size)] font-bold tracking-[var(--text-h2-tracking)] m-0 text-[var(--fg-1)] [font-family:var(--font-display)]">
-        {title}
-      </h2>
-      {meta && (
-        <span className="[font-family:var(--font-mono)] text-[13px] text-[var(--fg-6)]">{meta}</span>
-      )}
+    <div className="flex flex-wrap items-baseline justify-between gap-4 px-8 pt-12 pb-5">
+      <h2 className="m-0 text-[40px] font-semibold tracking-heading">{title}</h2>
+      {meta && <MonoText>{meta}</MonoText>}
     </div>
   )
 }

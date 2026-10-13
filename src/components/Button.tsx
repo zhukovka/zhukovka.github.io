@@ -1,52 +1,67 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
-type ButtonVariant = 'primary' | 'accent' | 'secondary' | 'ghost'
+type ButtonVariant = 'primary' | 'dark'
 type ButtonSize = 'md' | 'sm'
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface CommonProps {
   variant?: ButtonVariant
   size?: ButtonSize
-  icon?: React.ReactNode
+  className?: string
+  children?: React.ReactNode
 }
 
+type ButtonProps = CommonProps &
+  (
+    | ({ href?: undefined } & React.ButtonHTMLAttributes<HTMLButtonElement>)
+    | ({ href: string } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>)
+  )
+
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: 'bg-[var(--fg-1)] text-[var(--bg)] hover:bg-white',
-  accent: 'bg-[var(--accent)] text-[var(--on-accent)] hover:bg-[var(--accent-hover)]',
-  secondary:
-    'bg-transparent text-[var(--fg-1)] border border-[var(--border-4)] hover:bg-[oklch(0.28_0.01_95)]',
-  ghost: 'bg-transparent text-[var(--fg-3)]',
+  primary: 'bg-brand text-surface hover:bg-brand-hover',
+  dark: 'bg-forest text-surface hover:bg-ink',
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
-  md: 'px-[26px] py-[14px] text-[15px]',
-  sm: 'px-[20px] py-[10px] text-[13px]',
+  md: 'px-5 py-3 text-[15px]',
+  sm: 'px-4 py-[9px] text-sm',
 }
 
 export function Button({
   variant = 'primary',
   size = 'md',
-  children,
-  icon,
-  disabled,
   className,
+  children,
   ...rest
 }: ButtonProps) {
+  const classes = [
+    'inline-flex items-center justify-center gap-2.5 font-mono tracking-label',
+    'transition-colors duration-150',
+    variantClasses[variant],
+    sizeClasses[size],
+    className ?? '',
+  ].join(' ')
+
+  if ('href' in rest && rest.href !== undefined) {
+    const { href, ...anchorRest } = rest
+    // Internal routes go through Gatsby; hashes and external URLs stay plain anchors.
+    if (href.startsWith('/')) {
+      return (
+        <Link to={href} className={classes} {...anchorRest}>
+          {children}
+        </Link>
+      )
+    }
+    return (
+      <a href={href} className={classes} {...anchorRest}>
+        {children}
+      </a>
+    )
+  }
+
+  const { type = 'button', ...buttonRest } = rest as React.ButtonHTMLAttributes<HTMLButtonElement>
   return (
-    <button
-      disabled={disabled}
-      className={[
-        '[font-family:var(--font-display)] font-semibold',
-        'rounded-[var(--radius-pill)]',
-        'inline-flex items-center gap-2',
-        'transition-[background-color,color] duration-[var(--duration-standard)] ease-[var(--ease-standard)]',
-        disabled ? 'cursor-default opacity-45' : 'cursor-pointer',
-        variantClasses[variant],
-        sizeClasses[size],
-        className ?? '',
-      ].join(' ')}
-      {...rest}
-    >
-      {icon}
+    <button type={type} className={`${classes} cursor-pointer`} {...buttonRest}>
       {children}
     </button>
   )

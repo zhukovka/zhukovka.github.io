@@ -1,28 +1,21 @@
 import React from 'react'
+import { MonoText } from './MonoText'
+import type { Post } from '../data/posts'
 
-interface PostListItemProps {
-  date: string
-  title: string
-  excerpt: string
-  href?: string
-}
-
-export function PostListItem({ date, title, excerpt, href = '#' }: PostListItemProps) {
+export function PostListItem({ date, tag, read, title, dek }: Post) {
   return (
     <a
-      href={href}
-      className="group grid grid-cols-[140px_1fr_auto] gap-[32px] items-center py-[28px] border-t border-[var(--border-2)] no-underline text-inherit"
+      href="#"
+      className="grid grid-cols-1 items-baseline gap-2 border-b border-line px-8 py-[22px] transition-colors hover:bg-surface md:grid-cols-[minmax(96px,150px)_minmax(0,1fr)_auto] md:gap-6"
     >
-      <span className="[font-family:var(--font-mono)] text-[13px] text-[var(--fg-6)]">{date}</span>
-      <div>
-        <div className="text-[var(--text-title-size)] font-semibold tracking-[var(--text-title-tracking)] mb-[8px] text-[var(--fg-1)] [font-family:var(--font-display)]">
-          {title}
-        </div>
-        <div className="text-[15px] text-[var(--fg-4)] leading-[1.5] max-w-[640px]">{excerpt}</div>
-      </div>
-      <span className="text-[22px] text-[var(--accent)] transition-transform duration-[var(--duration-standard)] ease-[var(--ease-standard)] group-hover:translate-x-1">
-        →
+      <MonoText>{date}</MonoText>
+      <span className="flex flex-col gap-1.5">
+        <span className="text-[22px] font-medium leading-tight tracking-title text-pretty">{title}</span>
+        <span className="text-[15px] leading-normal text-ink-soft text-pretty">{dek}</span>
       </span>
+      <MonoText size="xs" caps tone="brand" className="whitespace-nowrap">
+        {tag} · {read}
+      </MonoText>
     </a>
   )
 }
