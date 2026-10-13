@@ -6,7 +6,7 @@ import { MonoText } from '../../components/MonoText'
 
 const PostPage: React.FC<PageProps<Queries.PostPageQuery>> = ({ data, children }) => (
   <Layout pageTitle={data.mdx?.frontmatter?.title ?? 'Post'}>
-    <article className="border-b border-line px-8 pt-16 pb-12">
+    <article className="border-b border-line bg-surface/50 px-8 pt-16 pb-12">
       <MonoText>{data.mdx?.frontmatter?.date}</MonoText>
       <h1 className="mt-3 mb-10 text-[clamp(36px,5vw,64px)] leading-none font-semibold tracking-display text-brand text-balance">
         {data.mdx?.frontmatter?.title}
