@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql, type HeadFC, type PageProps } from 'gatsby'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import { PostBrowser } from '../components/PostBrowser'
-import { NewsletterPanel } from '../components/NewsletterPanel'
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
+import { PostBrowser } from '../../components/PostBrowser'
+import { NewsletterPanel } from '../../components/NewsletterPanel'
 
 const PostsPage: React.FC<PageProps<Queries.PostsPageQuery>> = ({ data }) => (
   <Layout pageTitle="Posts">

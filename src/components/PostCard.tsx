@@ -6,7 +6,7 @@ export function PostCard({ post }: { post: Queries.PostSummaryFragment }) {
   const { title, date, slug, tag } = post.frontmatter ?? {}
   return (
     <Link
-      to={`/${slug}`}
+      to={`/blog/${slug}`}
       className="flex min-h-60 flex-col gap-3.5 border-r border-b border-line p-7 transition-colors hover:bg-surface"
     >
       <span className="flex justify-between">

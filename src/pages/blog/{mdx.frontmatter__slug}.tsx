@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql, type HeadFC, type PageProps } from 'gatsby'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import { MonoText } from '../components/MonoText'
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
+import { MonoText } from '../../components/MonoText'
 
 const PostPage: React.FC<PageProps<Queries.PostPageQuery>> = ({ data, children }) => (
   <Layout pageTitle={data.mdx?.frontmatter?.title ?? 'Post'}>

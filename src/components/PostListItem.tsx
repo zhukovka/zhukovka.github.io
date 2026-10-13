@@ -6,7 +6,7 @@ export function PostListItem({ post }: { post: Queries.PostSummaryFragment }) {
   const { title, date, slug, tag, read } = post.frontmatter ?? {}
   return (
     <Link
-      to={`/${slug}`}
+      to={`/blog/${slug}`}
       className="grid grid-cols-1 items-baseline gap-2 border-b border-line px-8 py-[22px] transition-colors hover:bg-surface md:grid-cols-[minmax(96px,150px)_minmax(0,1fr)_auto] md:gap-6"
     >
       <MonoText>{date}</MonoText>
