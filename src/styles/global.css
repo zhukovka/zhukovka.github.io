@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
 
 @import "tailwindcss";
 @source "../**/*.{ts,tsx}";
@@ -29,6 +29,8 @@
   /* Type */
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  /* Long-form article text only (.post-body); headings and UI stay sans/mono */
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 
   --tracking-display: -0.045em;
   --tracking-heading: -0.035em;
@@ -85,6 +87,82 @@
  * the frame and background below come from the design tokens.
  */
 @layer components {
+  /* Headings: one distinct treatment per level (design type scale) */
+  .post-body :is(h1, h2, h3, h4, h5, h6) {
+    margin: 0;
+    scroll-margin-top: 4.5rem; /* clear the sticky header on anchor jumps */
+    text-wrap: balance;
+  }
+  .post-body h1 {
+    margin-top: 2.5rem;
+    color: var(--color-brand);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: var(--tracking-display);
+    line-height: 1.05;
+  }
+  .post-body h2 {
+    margin-top: 2.75rem;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.5rem;
+    color: var(--color-ink);
+    font-size: 1.875rem;
+    font-weight: 600;
+    letter-spacing: var(--tracking-heading);
+    line-height: 1.15;
+  }
+  .post-body h3 {
+    margin-top: 1.75rem;
+    color: var(--color-ink);
+    font-size: 1.375rem;
+    font-weight: 600;
+    letter-spacing: var(--tracking-title);
+    line-height: 1.25;
+  }
+  .post-body h4 {
+    margin-top: 1.5rem;
+    color: var(--color-brand);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+  }
+  .post-body :is(h5, h6) {
+    margin-top: 1.25rem;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+  }
+  .post-body > :is(h1, h2, h3, h4, h5, h6):first-child {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  /* Reading text: serif at 18/1.7 in full ink, first paragraph as a lede */
+  .post-body :is(p, li) {
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+  .post-body > p:first-child {
+    font-size: 1.3125rem;
+    line-height: 1.55;
+  }
+  .post-body a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+  .post-body a:hover {
+    color: var(--color-brand-deep);
+  }
+
   .post-body pre {
     margin: 0.5rem 0;
     overflow-x: auto;
