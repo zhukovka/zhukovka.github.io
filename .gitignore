@@ -5,3 +5,6 @@ src/gatsby-types.d.ts
 
 # IDE
 .idea/
+
+# Design handoff files and downloaded design system copies
+reference/
