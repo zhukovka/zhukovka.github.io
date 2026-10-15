@@ -8,3 +8,6 @@ src/gatsby-types.d.ts
 
 # Design handoff files and downloaded design system copies
 reference/
+
+# macOS
+.DS_Store
