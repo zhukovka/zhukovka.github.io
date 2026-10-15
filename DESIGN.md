@@ -4,7 +4,7 @@ The visual language of the Zhukova blog: warm grey paper, one forest-green accen
 mono interface text, a serif for long reading, and 1px hairlines instead of shadows.
 
 Source of truth in code: `src/styles/global.css` (`@theme` tokens, `.post-body` rules).
-Components live in `src/components/`. Do not hard-code hex values or font names in
+UI primitives are shadcn/ui components in `src/components/ui/`, restyled to these tokens; app components live in `src/components/`. Do not hard-code hex values or font names in
 components; use the Tailwind utilities listed below.
 
 ## Principles
@@ -95,14 +95,17 @@ Rules:
 
 | Component | File | Spec |
 | --- | --- | --- |
-| Button | `Button.tsx` | Mono, `tracking-label`. `primary`: `bg-brand`, hover `bg-brand-hover`. `dark`: `bg-forest`, hover `bg-ink`. `md`: `px-5 py-3`, 15px. `sm`: `px-4 py-[9px]`, 14px. Text `surface`. 150ms colour transition. |
-| Input | `Input.tsx` | 1px `ink` border, `bg-surface`, mono 15px, `px-3.5 py-3`. Joined flush to the submit button. Focus: 2px brand outline, inset. |
+| Button | `ui/button.tsx` | Mono, `tracking-label`. `primary`: `bg-brand`, hover `bg-brand-hover`. `dark`: `bg-forest`, hover `bg-ink`. `ghost` (nav) and `link` (footer) are text-only. `md`: `px-5 py-3`, 15px. `sm`: `px-4 py-[9px]`, 14px. Text `surface`. 150ms colour transition. |
+| Input | `ui/input.tsx` | 1px `ink` border, `bg-surface`, mono 15px, `px-3.5 py-3`. Joined flush to the submit button. Focus: 2px brand outline, inset. |
 | Header | `Header.tsx` | Sticky, `bg-surface`, bottom 1px `line`. Diamond mark (14px, rotated 45deg, brand) + site name. Mono nav links with 1px dividers, then RSS (dark) and Subscribe (primary). |
-| Topic tab | `TopicTab.tsx` | 20px / 600 Geist with mono count at 70% opacity. Default: transparent, `ink-soft`. Hover: `surface-hover`. Active: `bg-brand`, `surface` text. `aria-pressed` reflects state. |
+| Topic tab | `TopicTab.tsx` (`ui/toggle-group`) | 20px / 600 Geist with mono count at 70% opacity. Default: transparent, `ink-soft`. Hover: `surface-hover`. Active: `bg-brand`, `surface` text. Radix sets `aria-pressed` / `data-state`. |
 | Post row | `PostListItem.tsx` | Grid: date (mono, muted) / title + excerpt / tag + read time. Bottom 1px `line`. Hover: `bg-surface`. Single column below `md`. |
 | Post card | `PostCard.tsx` | `p-7`, `min-h-60`, right and bottom 1px `line`. Tag (brand caps) and date (muted caps) on top, 24px title, excerpt pinned to the bottom. Hover: `bg-surface`. |
 | Section header | `SectionHeader.tsx` | 40px / 600 `tracking-heading` title with a mono muted count, baseline aligned. |
-| Newsletter | `NewsletterPanel.tsx` | Two columns: 36 to 56px brand heading, form. Success state is a 1px brand-bordered box in mono. |
+| Newsletter | `NewsletterPanel.tsx` | Two columns: 36 to 56px brand heading, form. Success state is `ui/alert` (`success`): a 1px brand-bordered box in mono. |
+| Badge | `ui/badge.tsx` | Mono 12px caps, `tracking-caps`. `default` brand (tags), `muted` (dates). |
+| Card | `ui/card.tsx` | Flat, square, no padding of its own; `PostCard` supplies borders and padding. |
+| Separator | `ui/separator.tsx` | 1px `line`; vertical dividers in the nav. |
 | Hero | `Hero.tsx` | Display title, mono caps description, primary button, image in a frame with top and left 1px `line`. |
 
 ### Post body (`.post-body`, MDX)

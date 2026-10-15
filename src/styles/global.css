@@ -26,6 +26,26 @@
   --color-brand-deep: #0f4a2c;
   --color-forest: #12241a;
 
+  /*
+   * shadcn/ui semantic tokens, aliased onto the palette above so the components
+   * in src/components/ui theme from one place. `muted` stays the text colour
+   * (see --color-muted); `muted-foreground` is the shadcn name for the same value.
+   */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-ink);
+  --color-primary: var(--color-brand);
+  --color-primary-foreground: var(--color-surface);
+  --color-secondary: var(--color-forest);
+  --color-secondary-foreground: var(--color-surface);
+  --color-muted-foreground: var(--color-muted);
+  --color-accent: var(--color-surface-hover);
+  --color-accent-foreground: var(--color-ink);
+  --color-border: var(--color-line);
+  --color-input: var(--color-ink);
+  --color-ring: var(--color-brand);
+
   /* Type */
   --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;

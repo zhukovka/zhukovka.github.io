@@ -19,6 +19,8 @@
     "@mdx-js/react": "^2.3.0",
     "@tailwindcss/postcss": "^4.3.2",
     "autoprefixer": "^10.5.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "gatsby": "^5.14.6",
     "gatsby-plugin-google-gtag": "^5.16.0",
     "gatsby-plugin-image": "^3.16.0",
@@ -28,11 +30,13 @@
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-sharp": "^5.16.0",
     "postcss": "^8.5.19",
+    "radix-ui": "^1.8.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "rehype-pretty-code": "^0.14.5",
     "remark-gfm": "^3.0.1",
     "shiki": "^4.5.0",
+    "tailwind-merge": "^3.7.0",
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {

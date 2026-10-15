@@ -1,6 +1,7 @@
 import React from 'react'
-import { Input } from './Input'
-import { Button } from './Button'
+import { Alert } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { MonoText } from './MonoText'
 
 interface NewsletterPanelProps {
@@ -25,9 +26,7 @@ export function NewsletterPanel({
       </h2>
       <div className="flex flex-col gap-3">
         {subscribed ? (
-          <div className="border border-brand px-3.5 py-3 font-mono text-[15px] text-brand">
-            ✓ Confirmation sent to {email}
-          </div>
+          <Alert variant="success">✓ Confirmation sent to {email}</Alert>
         ) : (
           <form
             className="flex flex-wrap"
@@ -44,6 +43,7 @@ export function NewsletterPanel({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               aria-label="Email address"
+              className="min-w-[200px] flex-1"
             />
             <Button type="submit" className="px-[22px]">
               Subscribe →
