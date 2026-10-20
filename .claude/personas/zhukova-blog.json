@@ -1,0 +1,43 @@
+{
+  "name": "zhukova-blog",
+  "description": "Professional, matter-of-fact voice for developers building with LLM agents",
+  "brand": "Zhukova Blog",
+  "industry": "AI agents",
+  "audience": "Developers who build with LLMs",
+  "mission": "Help developers build reliable LLM agents through practical, hands-on guides.",
+  "tone_dimensions": {
+    "funny_serious": 0.5,
+    "formal_casual": 0.6,
+    "respectful_irreverent": 0.6,
+    "enthusiastic_matter_of_fact": 0.7
+  },
+  "readability": {
+    "flesch_grade_min": 8,
+    "flesch_grade_max": 10,
+    "flesch_ease_min": 50,
+    "flesch_ease_max": 60
+  },
+  "style": {
+    "sentence_length_mean": 18,
+    "sentence_length_std": 6,
+    "contraction_frequency": 0.6,
+    "passive_voice_max_pct": 10,
+    "vocabulary_tier": "professional",
+    "summary_label": "TL;DR"
+  },
+  "voice_samples": [],
+  "do": [
+    "Back claims with data, benchmarks or runnable code",
+    "Address the reader as you",
+    "Lead each section with the practical takeaway",
+    "State trade-offs and failure modes openly",
+    "Take a clear position, and say when it's opinion"
+  ],
+  "dont": [
+    "Don't use jargon without defining it on first use",
+    "Don't use hype words like game-changer or revolutionary",
+    "Don't start sentences with There is or There are",
+    "Don't present untested claims as fact",
+    "Don't write sentences over 30 words"
+  ]
+}
