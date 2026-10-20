@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { ToggleGroup } from '@/components/ui/toggle-group'
 import { SectionHeader } from './SectionHeader'
 import { TopicTab } from './TopicTab'
 import { PostListItem } from './PostListItem'
@@ -34,7 +35,14 @@ export function PostBrowser({ posts, layout = 'list' }: PostBrowserProps) {
               Showing {topic === ALL_TOPICS ? 'all posts' : topic} →
             </span>
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))]">
+          <ToggleGroup
+            type="single"
+            value={topic}
+            // Radix reports '' when the active item is clicked again; keep the selection.
+            onValueChange={(value) => value && setTopic(value)}
+            aria-label="Filter by topic"
+            className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))]"
+          >
             {topics.map((name) => (
               <TopicTab
                 key={name}
@@ -44,11 +52,9 @@ export function PostBrowser({ posts, layout = 'list' }: PostBrowserProps) {
                     ? posts.length
                     : posts.filter((p) => p.frontmatter?.tag === name).length
                 }
-                active={name === topic}
-                onSelect={() => setTopic(name)}
               />
             ))}
-          </div>
+          </ToggleGroup>
         </section>
       )}
 

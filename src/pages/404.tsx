@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import type { HeadFC, PageProps } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import { Button } from '../components/Button'
+import { Button } from '@/components/ui/button'
 import { MonoText } from '../components/MonoText'
 
 const NotFoundPage: React.FC<PageProps> = () => (
@@ -15,7 +16,9 @@ const NotFoundPage: React.FC<PageProps> = () => (
         <MonoText caps tone="brand" className="text-[15px] leading-[1.55] tracking-label">
           The page you were looking for has moved, or never existed
         </MonoText>
-        <Button href="/">← Back to the log</Button>
+        <Button asChild>
+          <Link to="/">← Back to the log</Link>
+        </Button>
       </div>
     </section>
   </Layout>

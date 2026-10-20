@@ -31,7 +31,7 @@ The visual language is documented in **`DESIGN.md`** (tokens, type scale, compon
 - `postcss.config.js` + `gatsby-plugin-postcss`: wires Tailwind into the Gatsby build.
 - `tailwind.config.js` is a leftover and is not used: Tailwind 4 is configured in CSS.
 
-**Styling:** Tailwind CSS 4, configured in CSS. `src/styles/global.css` holds the Google Fonts import, the `@theme` design tokens (colours, fonts, tracking, container width), the `bg-dots` and `bg-hatch` utilities, and the `.post-body` rules for MDX content (headings, serif body text, code blocks, tables). Style components with Tailwind utilities generated from those tokens (`bg-paper`, `text-ink-soft`, `border-line`, `font-mono`, `font-serif`, `tracking-display`, `max-w-page`). Do not hard-code hex values or font names. No CSS Modules or styled-components.
+**Styling:** Tailwind CSS 4, configured in CSS. `src/styles/global.css` holds the Google Fonts import, the `@theme` design tokens (colours, fonts, tracking, container width), the `bg-dots` and `bg-hatch` utilities, and the `.post-body` rules for MDX content (headings, serif body text, code blocks, tables). Style components with Tailwind utilities generated from those tokens (`bg-paper`, `text-ink-soft`, `border-line`, `font-mono`, `font-serif`, `tracking-display`, `max-w-page`). The shadcn semantic tokens (`bg-primary`, `border-input`, `text-muted-foreground`, ...) are aliases onto those colours in `@theme`. Do not hard-code hex values or font names. No CSS Modules or styled-components.
 
 **Pages:** File-system routing under `src/pages/`. Each file exports a default React component and optionally a named `Head` export for `<head>` metadata (Gatsby Head API).
 - `index.tsx`: home (hero, topic filter, post list, newsletter)
@@ -55,7 +55,9 @@ MDX options (in `gatsby-config.mjs`): `remark-gfm` v3 (v4 breaks the build with 
 
 **Images:** `gatsby-plugin-image` + `gatsby-transformer-sharp`. Source images live in `src/images/` (the hero uses `StaticImage` with `src/images/hero.jpg`).
 
-**Components:** `src/components/`. Primitives (`Button`, `Input`, `MonoText`, `TopicTab`, `SectionHeader`), post UI (`PostBrowser`, `PostListItem`, `PostCard`), and page chrome (`Header`, `Footer`, `Hero`, `NewsletterPanel`, `layout`, `seo`). The `About` nav link, the RSS links and the footer GitHub and Mastodon links are placeholders (`#`).
+**Components:** `src/components/`. UI primitives are **shadcn/ui** components in `src/components/ui/` (`button`, `input`, `badge`, `card`, `alert`, `separator`, `toggle`, `toggle-group`), configured by `components.json`. Build new UI on these and add more with `npx shadcn@latest add <name>`. The generated code is restyled to the design tokens (square, no shadows, no `dark:` or `destructive` variants), so review it after adding. Check that the CLI did not add a bogus `cn` npm dependency (`cn` must come from `@/lib/utils`) or a `pnpm-lock.yaml`. App components compose them: `MonoText`, `SectionHeader`, `TopicTab` (a `ToggleGroupItem`), post UI (`PostBrowser`, `PostListItem`, `PostCard`), and page chrome (`Header`, `Footer`, `Hero`, `NewsletterPanel`, `layout`, `seo`). Internal links use `<Button asChild><Link to=...>`.
+
+**Path alias:** `@/*` maps to `src/*` (`paths` in `tsconfig.json`, mirrored by `onCreateWebpackConfig` in `gatsby-node.ts`). The `About` nav link, the RSS links and the footer GitHub and Mastodon links are placeholders (`#`).
 
 **Google Analytics:** `gatsby-plugin-google-gtag` is installed but not configured in `gatsby-config.mjs`.
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { Badge } from '@/components/ui/badge'
 import { MonoText } from './MonoText'
 
 export function PostListItem({ post }: { post: Queries.PostSummaryFragment }) {
@@ -14,9 +15,7 @@ export function PostListItem({ post }: { post: Queries.PostSummaryFragment }) {
         <span className="text-[22px] font-medium leading-tight tracking-title text-pretty">{title}</span>
         <span className="text-[15px] leading-normal text-ink-soft text-pretty">{post.excerpt}</span>
       </span>
-      <MonoText size="xs" caps tone="brand" className="whitespace-nowrap">
-        {[tag, read].filter(Boolean).join(' · ')}
-      </MonoText>
+      <Badge>{[tag, read].filter(Boolean).join(' · ')}</Badge>
     </Link>
   )
 }
