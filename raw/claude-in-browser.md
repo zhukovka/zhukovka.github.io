@@ -1,0 +1,2 @@
+I don't know what took me so long, but I started to use Claude in the browser as part of my development workflow, and I am so happy about it.
+Now I ask Claude to write the manual testing plan for each use case in my PRD. And then I ask Claude to do the plan. I can just observe how it works, if I feel like it. Then Claude writes its observations to a separate file. Documents bugs and fixes it. The only downside is that I feel how obsolete my job is becoming.
