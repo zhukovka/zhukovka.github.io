@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 634" width="1040" height="634" role="img" aria-labelledby="t d">
+<title id="t">The shifts, stage by stage</title>
+<desc id="d">For each SDLC stage, the traditional human-driven steps on the left and the AI-native steps on the right. Person icons mark human steps, green diamonds mark agent steps.</desc>
+<defs><pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.6" fill="#D3D0C9"/></pattern>
+<symbol id="person" viewBox="0 0 14 14"><circle cx="7" cy="4" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 13c0-3 2.5-4.5 5-4.5s5 1.5 5 4.5" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol></defs>
+<rect width="1040" height="634" fill="#E8E6E1"/><rect width="1040" height="634" fill="url(#dots)"/>
+<line x1="0.5" y1="0" x2="0.5" y2="634" stroke="#D3D0C9"/><line x1="1039.5" y1="0" x2="1039.5" y2="634" stroke="#D3D0C9"/>
+<text x="32" y="66" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-size="44" font-weight="600" letter-spacing="-2" fill="#1B6E43">The shifts, stage by stage</text>
+<use href="#person" x="868" y="52" width="14" height="14" color="#55564F"/><text x="888" y="63" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Human</text>
+<rect x="958" y="54" width="8" height="8" fill="#1B6E43" transform="rotate(45 962 58)"/><text x="976" y="63" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Agent</text>
+<line x1="0" y1="94" x2="1040" y2="94" stroke="#D3D0C9"/>
+<rect x="1" y="95" width="1038" height="35" fill="#EFEEE9"/><line x1="0" y1="130" x2="1040" y2="130" stroke="#D3D0C9"/>
+<text x="17" y="117" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.6" font-weight="400" fill="#55564F">STAGE</text>
+<text x="127" y="117" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.6" font-weight="400" fill="#55564F">TRADITIONAL</text>
+<text x="609" y="117" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="0.6" font-weight="500" fill="#1B6E43">AI-NATIVE</text>
+<line x1="111" y1="95" x2="111" y2="130" stroke="#D3D0C9"/>
+<rect x="1" y="130" width="110" height="84" fill="#EFEEE9"/><line x1="111" y1="130" x2="111" y2="214" stroke="#D3D0C9"/>
+<line x1="0" y1="214" x2="1040" y2="214" stroke="#D3D0C9"/>
+<text x="17" y="179" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.7" fill="#1C1D1B">Plan</text>
+<text x="575" y="178" text-anchor="middle" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#1B6E43">→</text>
+<rect x="127.5" y="156.5" width="105.8" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="137.0" y="165" width="14" height="14" color="#55564F"/>
+<text x="159.0" y="176" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Committee</text>
+<text x="239.8" y="177" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#55564F">→</text>
+<rect x="254.1" y="156.5" width="105.8" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="263.6" y="165" width="14" height="14" color="#55564F"/>
+<text x="285.6" y="176" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Workshops</text>
+<text x="366.4" y="177" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#55564F">→</text>
+<rect x="380.7" y="156.5" width="105.8" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="390.2" y="165" width="14" height="14" color="#55564F"/>
+<text x="412.2" y="176" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Sign-offs</text>
+<rect x="609.0" y="156" width="92.4" height="32" fill="#1B6E43"/>
+<rect x="622.0" y="168" width="8" height="8" fill="#EFEEE9" transform="rotate(45 626.0 172)"/>
+<text x="641.0" y="176" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Sources</text>
+<text x="707.4" y="177" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">→</text>
+<rect x="721.2" y="156" width="106.8" height="32" fill="#1B6E43"/>
+<rect x="734.2" y="168" width="8" height="8" fill="#EFEEE9" transform="rotate(45 738.2 172)"/>
+<text x="753.2" y="176" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">intent.md</text>
+<rect x="1" y="214" width="110" height="84" fill="#EFEEE9"/><line x1="111" y1="214" x2="111" y2="298" stroke="#D3D0C9"/>
+<line x1="0" y1="298" x2="1040" y2="298" stroke="#D3D0C9"/>
+<text x="17" y="263" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.7" fill="#1C1D1B">Design</text>
+<text x="575" y="262" text-anchor="middle" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#1B6E43">→</text>
+<rect x="127.5" y="240.5" width="127.4" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="137.0" y="249" width="14" height="14" color="#55564F"/>
+<text x="159.0" y="260" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Analyst spec</text>
+<text x="261.4" y="261" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#55564F">→</text>
+<rect x="275.7" y="240.5" width="98.6" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="285.2" y="249" width="14" height="14" color="#55564F"/>
+<text x="307.2" y="260" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Designer</text>
+<rect x="609.0" y="240" width="121.2" height="32" fill="#1B6E43"/>
+<rect x="622.0" y="252" width="8" height="8" fill="#EFEEE9" transform="rotate(45 626.0 256)"/>
+<text x="641.0" y="260" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">One session</text>
+<text x="736.2" y="261" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">+</text>
+<rect x="750.0" y="240" width="135.6" height="32" fill="#1B6E43"/>
+<rect x="763.0" y="252" width="8" height="8" fill="#EFEEE9" transform="rotate(45 767.0 256)"/>
+<text x="782.0" y="260" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Skills in Git</text>
+<rect x="1" y="298" width="110" height="84" fill="#EFEEE9"/><line x1="111" y1="298" x2="111" y2="382" stroke="#D3D0C9"/>
+<line x1="0" y1="382" x2="1040" y2="382" stroke="#D3D0C9"/>
+<text x="17" y="347" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.7" fill="#1C1D1B">Build</text>
+<text x="575" y="346" text-anchor="middle" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#1B6E43">→</text>
+<rect x="127.5" y="324.5" width="163.4" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="137.0" y="333" width="14" height="14" color="#55564F"/>
+<text x="159.0" y="344" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Hand-written code</text>
+<text x="297.4" y="345" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#55564F">→</text>
+<rect x="311.7" y="324.5" width="113.0" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="321.2" y="333" width="14" height="14" color="#55564F"/>
+<text x="343.2" y="344" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Docs later</text>
+<rect x="609.0" y="324" width="128.4" height="32" fill="#1B6E43"/>
+<rect x="622.0" y="336" width="8" height="8" fill="#EFEEE9" transform="rotate(45 626.0 340)"/>
+<text x="641.0" y="344" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Code + tests</text>
+<text x="743.4" y="345" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">+</text>
+<rect x="757.2" y="324" width="106.8" height="32" fill="#1B6E43"/>
+<rect x="770.2" y="336" width="8" height="8" fill="#EFEEE9" transform="rotate(45 774.2 340)"/>
+<text x="789.2" y="344" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">CLAUDE.md</text>
+<rect x="1" y="382" width="110" height="84" fill="#EFEEE9"/><line x1="111" y1="382" x2="111" y2="466" stroke="#D3D0C9"/>
+<line x1="0" y1="466" x2="1040" y2="466" stroke="#D3D0C9"/>
+<text x="17" y="431" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.7" fill="#1C1D1B">Test</text>
+<text x="575" y="430" text-anchor="middle" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#1B6E43">→</text>
+<rect x="127.5" y="408.5" width="91.4" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="137.0" y="417" width="14" height="14" color="#55564F"/>
+<text x="159.0" y="428" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">QA gate</text>
+<text x="225.4" y="429" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#55564F">at stage boundaries</text>
+<rect x="609.0" y="408" width="157.2" height="32" fill="#1B6E43"/>
+<rect x="622.0" y="420" width="8" height="8" fill="#EFEEE9" transform="rotate(45 626.0 424)"/>
+<text x="641.0" y="428" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Continuous evals</text>
+<text x="772.2" y="429" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">during build</text>
+<rect x="1" y="466" width="110" height="84" fill="#EFEEE9"/><line x1="111" y1="466" x2="111" y2="550" stroke="#D3D0C9"/>
+<line x1="0" y1="550" x2="1040" y2="550" stroke="#D3D0C9"/>
+<text x="17" y="515" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.7" fill="#1C1D1B">Deploy</text>
+<text x="575" y="514" text-anchor="middle" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#1B6E43">→</text>
+<rect x="127.5" y="492.5" width="177.8" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="137.0" y="501" width="14" height="14" color="#55564F"/>
+<text x="159.0" y="512" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Every line reviewed</text>
+<rect x="609.0" y="492" width="128.4" height="32" fill="#1B6E43"/>
+<rect x="622.0" y="504" width="8" height="8" fill="#EFEEE9" transform="rotate(45 626.0 508)"/>
+<text x="641.0" y="512" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Agent review</text>
+<text x="743.4" y="513" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">→</text>
+<rect x="757.7" y="492.5" width="134.6" height="31" fill="#EFEEE9" stroke="#1C1D1B"/>
+<use href="#person" x="767.2" y="501" width="14" height="14" color="#1C1D1B"/>
+<text x="789.2" y="512" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1C1D1B">Critical code</text>
+<text x="898.8" y="513" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">+</text>
+<rect x="912.6" y="492" width="78.0" height="32" fill="#1B6E43"/>
+<rect x="925.6" y="504" width="8" height="8" fill="#EFEEE9" transform="rotate(45 929.6 508)"/>
+<text x="944.6" y="512" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Hooks</text>
+<rect x="1" y="550" width="110" height="84" fill="#EFEEE9"/><line x1="111" y1="550" x2="111" y2="634" stroke="#D3D0C9"/>
+<line x1="0" y1="634" x2="1040" y2="634" stroke="#D3D0C9"/>
+<text x="17" y="599" font-family="Geist, 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.7" fill="#1C1D1B">Maintain</text>
+<text x="575" y="598" text-anchor="middle" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#1B6E43">→</text>
+<rect x="127.5" y="576.5" width="156.2" height="31" fill="#EFEEE9" stroke="#D3D0C9"/>
+<use href="#person" x="137.0" y="585" width="14" height="14" color="#55564F"/>
+<text x="159.0" y="596" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#55564F">Watch production</text>
+<rect x="609.0" y="576" width="92.4" height="32" fill="#1B6E43"/>
+<rect x="622.0" y="588" width="8" height="8" fill="#EFEEE9" transform="rotate(45 626.0 592)"/>
+<text x="641.0" y="596" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Monitor</text>
+<text x="707.4" y="597" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">→</text>
+<rect x="721.2" y="576" width="121.2" height="32" fill="#1B6E43"/>
+<rect x="734.2" y="588" width="8" height="8" fill="#EFEEE9" transform="rotate(45 738.2 592)"/>
+<text x="753.2" y="596" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">Band breach</text>
+<text x="848.4" y="597" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1B6E43">→</text>
+<rect x="862.2" y="576" width="106.8" height="32" fill="#1B6E43"/>
+<rect x="875.2" y="588" width="8" height="8" fill="#EFEEE9" transform="rotate(45 879.2 592)"/>
+<text x="894.2" y="596" font-family="'Geist Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#EFEEE9">intent.md</text>
+</svg>
