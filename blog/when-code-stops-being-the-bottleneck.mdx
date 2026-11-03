@@ -97,15 +97,6 @@ Most organizations sit somewhere between the two columns.
 
 ![For each SDLC stage, the traditional human-driven steps on the left and the AI-native steps on the right. Person icons mark human steps, green diamonds mark agent steps.](/images/ai-native-sdlc-shifts.svg)
 
-| Stage | Traditional SDLC | AI-native SDLC |
-| --- | --- | --- |
-| Plan | Requirements gathered by committee, refined through workshops and sign-offs, written up by hand | Claude synthesizes pain points from the sources into `intent.md`, readable by humans and actionable by machines |
-| Design | Specs written by analysts, then parsed by designers | Requirements and design compressed into one session with an agent, guided by standards encoded as skills and versioned in Git |
-| Build | Handwritten code and tests, with documentation written afterward | AI-generated code and tests, with institutional knowledge kept in versioned `CLAUDE.md` files and skills |
-| Test | QA gates at stage boundaries | Continuous evals woven through implementation |
-| Deploy | Humans review every line, and governance happens in review cycles, often inconsistently | Layered agentic review, with human review reserved for regulated and critical code; governance enforced as the AI acts, with hooks as approval gates |
-| Maintain | Humans watch production for bugs | Agents monitor live deployments; a breached control band is diagnosed and written back into the loop as a new `intent.md` |
-
 ## How the playbook is organized
 
 The rest of the course is built from twelve "plays", grouped under the six stages. Each play covers:
