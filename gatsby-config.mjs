@@ -10,7 +10,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const config = {
   siteMetadata: {
     title: `Zhukova blog`,
-    siteUrl: `https://www.yourdomain.tld`,
+    description: `Long-form writing on coding agents, AI-native delivery, and the process around the code`,
+    // Deployed from the zhukovka.github.io repo (GitHub Pages user site, no path prefix).
+    // Absolute URLs in the RSS feed are built from this value, so keep it in sync with the real domain.
+    siteUrl: `https://zhukovka.github.io`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // Learn more at: https://gatsby.dev/graphql-typegen
@@ -46,6 +49,40 @@ const config = {
     {
       resolve: 'gatsby-source-filesystem',
       options: { name: 'blog', path: `${__dirname}/blog` },
+    },
+    {
+      // RSS feed at /rss.xml, written at the end of `gatsby build` (not served by `develop`).
+      // Items carry the title, date, tag and the auto-generated excerpt, not the full post body.
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `{ site { siteMetadata { title description siteUrl site_url: siteUrl } } }`,
+        feeds: [
+          {
+            output: '/rss.xml',
+            title: 'Zhukova blog',
+            query: `{
+              allMdx(sort: { frontmatter: { date: DESC } }) {
+                nodes {
+                  excerpt(pruneLength: 280)
+                  frontmatter { title date slug tag }
+                }
+              }
+            }`,
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.nodes.map((node) => {
+                const url = `${site.siteMetadata.siteUrl}/blog/${node.frontmatter.slug}/`
+                return {
+                  title: node.frontmatter.title,
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url,
+                  guid: url,
+                  categories: node.frontmatter.tag ? [node.frontmatter.tag] : [],
+                }
+              }),
+          },
+        ],
+      },
     },
   ],
 }
