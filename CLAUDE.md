@@ -63,4 +63,4 @@ MDX options (in `gatsby-config.mjs`): `remark-gfm` v3 (v4 breaks the build with 
 
 **Google Analytics:** `gatsby-plugin-google-gtag` is installed but not configured in `gatsby-config.mjs`.
 
-**Not yet wired:** the newsletter form only shows a confirmation on screen; it does not send the email anywhere.
+**Newsletter:** `NewsletterPanel` POSTs `{ email }` as JSON to the Cloudflare Worker at `siteMetadata.subscribeUrl` (source in the sibling `beehiiv-subscribe` project), which forwards it to beehiiv. The beehiiv API key lives only in the Worker as a secret, never in this repo. The confirmation shows only after the Worker answers OK; a 400 shows an "invalid email" message and anything else a generic error. The Worker allows only the origins in its `ALLOWED_ORIGINS` var (the production site and `http://localhost:8000`).

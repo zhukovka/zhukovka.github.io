@@ -14,6 +14,9 @@ const config = {
     // Deployed from the zhukovka.github.io repo (GitHub Pages user site, no path prefix).
     // Absolute URLs in the RSS feed are built from this value, so keep it in sync with the real domain.
     siteUrl: `https://zhukovka.github.io`,
+    // Cloudflare Worker that forwards newsletter sign-ups to beehiiv (the API key lives there).
+    // Source: ../beehiiv-subscribe. The Worker only accepts requests from the origins it allows.
+    subscribeUrl: `https://beehiiv-subscribe.zhukovka.workers.dev`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // Learn more at: https://gatsby.dev/graphql-typegen
