@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
-    "@tailwindcss/postcss": "^4.3.2",
-    "autoprefixer": "^10.5.2",
+    "@tailwindcss/postcss": "^4.3.4",
+    "autoprefixer": "^10.6.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gatsby": "^5.14.6",
@@ -30,21 +30,33 @@
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-sharp": "^5.16.0",
-    "postcss": "^8.5.19",
+    "postcss": "^8.5.32",
     "radix-ui": "^1.8.1",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "rehype-pretty-code": "^0.14.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "rehype-pretty-code": "^0.14.6",
     "remark-gfm": "^3.0.1",
-    "shiki": "^4.5.0",
+    "shiki": "^4.6.0",
     "tailwind-merge": "^3.7.0",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.4"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "typescript": "^5.3.3"
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.4.0+sha512.6b849d0787d97f8f4e1f03a9b8ff8f038e79e153d6f11ae539ae7c435ff9e796df6a862c991502695c7f9e8fac8aeafc1ac5a8dab47e36148d183832d886dd52"
+  "packageManager": "pnpm@10.4.0+sha512.6b849d0787d97f8f4e1f03a9b8ff8f038e79e153d6f11ae539ae7c435ff9e796df6a862c991502695c7f9e8fac8aeafc1ac5a8dab47e36148d183832d886dd52",
+  "overrides": {
+    "lodash": "4.18.1",
+    "path-to-regexp": "0.1.13",
+    "qs": "6.17.1",
+    "immutable": "3.8.4",
+    "serialize-javascript": "7.1.4",
+    "tmp": "0.2.7",
+    "decode-uri-component": "0.5.1",
+    "cookie": "0.7.2",
+    "uuid": "11.1.1",
+    "sharp": "0.35.5"
+  }
 }
