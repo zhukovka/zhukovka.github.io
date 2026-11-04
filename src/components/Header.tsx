@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 
 const NAV = [
   { label: 'Writing', href: '/blog' },
-  { label: 'Topics', href: '/#topics' },
-  { label: 'About', href: '#' },
+  // { label: 'Topics', href: '/#topics' },
+  // { label: 'About', href: '#' },
 ]
 
 export function Header({ title }: { title: string }) {
@@ -31,7 +31,7 @@ export function Header({ title }: { title: string }) {
             </React.Fragment>
           ))}
           <Button variant="dark" size="sm" className="ml-3" asChild>
-            <a href="#">RSS</a>
+            <a href={withPrefix('/rss.xml')}>RSS</a>
           </Button>
           <Button size="sm" asChild>
             <Link to="/#subscribe">Subscribe</Link>

@@ -57,8 +57,10 @@ MDX options (in `gatsby-config.mjs`): `remark-gfm` v3 (v4 breaks the build with 
 
 **Components:** `src/components/`. UI primitives are **shadcn/ui** components in `src/components/ui/` (`button`, `input`, `badge`, `card`, `alert`, `separator`, `toggle`, `toggle-group`), configured by `components.json`. Build new UI on these and add more with `npx shadcn@latest add <name>`. The generated code is restyled to the design tokens (square, no shadows, no `dark:` or `destructive` variants), so review it after adding. Check that the CLI did not add a bogus `cn` npm dependency (`cn` must come from `@/lib/utils`) or a `pnpm-lock.yaml`. App components compose them: `MonoText`, `SectionHeader`, `TopicTab` (a `ToggleGroupItem`), post UI (`PostBrowser`, `PostListItem`, `PostCard`), and page chrome (`Header`, `Footer`, `Hero`, `NewsletterPanel`, `layout`, `seo`). Internal links use `<Button asChild><Link to=...>`.
 
-**Path alias:** `@/*` maps to `src/*` (`paths` in `tsconfig.json`, mirrored by `onCreateWebpackConfig` in `gatsby-node.ts`). The `About` nav link, the RSS links and the footer GitHub and Mastodon links are placeholders (`#`).
+**Path alias:** `@/*` maps to `src/*` (`paths` in `tsconfig.json`, mirrored by `onCreateWebpackConfig` in `gatsby-node.ts`). The `About` nav link and the footer GitHub link are placeholders (`#`).
+
+**RSS:** `gatsby-plugin-feed` (configured in `gatsby-config.mjs`) writes `/rss.xml` at the end of `npm run build`; `develop` does not serve it. Items use the title, date, tag and auto-generated excerpt, not the full post body. Absolute links come from `siteMetadata.siteUrl`, which must match the deployed domain. The Header and Footer RSS links point at `/rss.xml` through `withPrefix`.
 
 **Google Analytics:** `gatsby-plugin-google-gtag` is installed but not configured in `gatsby-config.mjs`.
 
-**Not yet wired:** the newsletter form only shows a confirmation on screen; it does not send the email anywhere.
+**Newsletter:** `NewsletterPanel` POSTs `{ email }` as JSON to the Cloudflare Worker at `siteMetadata.subscribeUrl` (source in the sibling `beehiiv-subscribe` project), which forwards it to beehiiv. The beehiiv API key lives only in the Worker as a secret, never in this repo. The confirmation shows only after the Worker answers OK; a 400 shows an "invalid email" message and anything else a generic error. The Worker allows only the origins in its `ALLOWED_ORIGINS` var (the production site and `http://localhost:8000`).

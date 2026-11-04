@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Button } from '@/components/ui/button'
-import { MonoText } from './MonoText'
 import { StaticImage } from 'gatsby-plugin-image'
 
 export function Hero() {
@@ -13,14 +12,13 @@ export function Hero() {
         </h1>
         <div className="flex max-w-[380px] flex-col gap-[22px]">
           <p className="m-0 font-mono text-[15px] leading-[1.55] tracking-label text-brand uppercase">
-            Long-form writing on distributed systems, compilers, and the bugs that live between them
+            Long-form writing on coding agents, AI-native delivery, and the process around the code
           </p>
           <Button asChild>
             <Link to="/#writing">
               Read the latest <span>→</span>
             </Link>
           </Button>
-          <MonoText size="xs">new essay every other tuesday · no tracking</MonoText>
         </div>
       </div>
       <div className="flex min-h-[420px] items-end justify-end pt-12 pl-12">
