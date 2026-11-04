@@ -16,6 +16,15 @@ Just one question: what happens on the unhappy path?
 
 This is part one of a five-part series on what "production-ready" means for React in 2026. This part covers correctness: states, types, runtime validation, error boundaries and tests. The rest covers effects and data, performance, security, and how senior interviews grade all of it.
 
+## TL;DR
+
+- **States:** design loading, empty, error, stale and unauthorized, not just success.
+- **Types:** model async state as a discriminated union with an exhaustiveness check. No boolean soup.
+- **Runtime:** parse every trust boundary with a schema. Never cast.
+- **Errors:** layer boundaries at route and feature level, and wire React 19 root hooks to monitoring.
+- **Tests:** query by role, mock the network with MSW, cover every state.
+- **Agents:** enforce all of it with a skill, an instruction file and lint rules.
+
 ## Design every state, not just the happy one
 
 Every data-driven view has at least six states. Production code designs all of them:
