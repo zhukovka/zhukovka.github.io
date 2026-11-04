@@ -1,0 +1,17 @@
+{
+  "intentSource": {
+    "type": "github",
+    "details": {
+      "repo": "zhukovka/zhukovka.github.io",
+      "projectOwner": "zhukovka",
+      "projectNumber": 3,
+      "projectUrl": "https://github.com/users/zhukovka/projects/3"
+    }
+  },
+  "artifacts": {
+    "root": "docs/sdlc",
+    "folderPerIntent": true,
+    "slug": "ticket-id-and-title",
+    "commit": true
+  }
+}
