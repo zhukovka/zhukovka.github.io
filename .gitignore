@@ -12,3 +12,4 @@ reference/
 # macOS
 .DS_Store
 /.env.local
+/yt
