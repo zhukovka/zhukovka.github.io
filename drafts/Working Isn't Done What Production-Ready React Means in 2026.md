@@ -162,6 +162,37 @@ A 90% coverage number on snapshot tests tells you nothing. Four RTL tests coveri
 
 If it only works on the happy path, it isn't done.
 
+## Make your coding agent follow these rules
+
+A rule that lives only in prose gets skipped. Encode these rules in two layers: instructions the agent reads, and tooling that fails the build.
+
+### Layer 1: written rules
+
+- **A `production-react` skill.** It loads only on React work and holds the full checklist plus the code patterns (`assertNever`, parse at the edge). Put it in `.agents/skills/` so the repo carries it and any agent that supports skills can use it.
+- **An agent instruction file.** It is always loaded, so keep it short. Use the file your tool reads at the start of every session: `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md` or Cursor rules. Write imperative one-liners:
+  - Handle loading, empty, error, stale and unauthorized in every async view.
+  - Model async state as a discriminated union with an `assertNever` check. No boolean flags.
+  - Never cast API data with `as`. Parse it with a Zod schema in the query function and derive types from the schema.
+  - Use layered error boundaries: route, feature, recoverable.
+  - Query by role, use `userEvent`, mock the network with MSW, and cover each state.
+  - Add a regression test for every bug fix.
+
+### Layer 2: enforcement
+
+The agent can't talk its way around a failing build:
+
+- **`tsconfig.json`:** `strict: true` and `noUncheckedIndexedAccess`.
+- **ESLint:**
+  - `@typescript-eslint/no-explicit-any`
+  - `@typescript-eslint/switch-exhaustiveness-check`
+  - `@typescript-eslint/consistent-type-assertions`, set to forbid `as` on data
+  - `eslint-plugin-testing-library` for role queries and `userEvent`
+- **Hook or CI:** run typecheck, lint and tests before the agent's work is accepted. A pre-commit hook, a CI job or your agent's completion hook all work.
+
+Some checklist items need judgment and can't be linted: all six states handled, boundaries in the right places. Give those to a review step, with the checklist above as the standard.
+
+A rule the pipeline doesn't enforce is only a suggestion.
+
 Next in the series: why fetching in `useEffect` is the most common sign that React code isn't production-ready, and where server state, client state and URL state belong.
 
 ## Sources
