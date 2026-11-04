@@ -5,8 +5,8 @@ import { Separator } from '@/components/ui/separator'
 
 const NAV = [
   { label: 'Writing', href: '/blog' },
-  { label: 'Topics', href: '/#topics' },
-  { label: 'About', href: '#' },
+  // { label: 'Topics', href: '/#topics' },
+  // { label: 'About', href: '#' },
 ]
 
 export function Header({ title }: { title: string }) {
