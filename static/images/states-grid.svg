@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="904" height="621" viewBox="0 0 904 621" role="img" aria-label="Six states of a data-driven view: loading, empty, error, stale or partial, unauthorized, success">
+  <defs>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#DEDCD5"/>
+      <rect width="4" height="8" fill="#D3D0C9"/>
+    </pattern>
+    <g id="cell-bg">
+      <rect width="301" height="310" fill="#EFEEE9" fill-opacity="0.5"/>
+      <path d="M300.5 0V309.5H0" fill="none" stroke="#D3D0C9"/>
+    </g>
+  </defs>
+  <rect width="904" height="621" fill="#E8E6E1"/>
+  <path d="M0.5 621V0.5H904" fill="none" stroke="#D3D0C9"/>
+
+  <!-- 1 Loading -->
+  <g transform="translate(1 1)">
+    <use href="#cell-bg"/>
+    <g font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.6"><text x="20" y="32" fill="#1B6E43" font-weight="500">LOADING</text><text x="281" y="32" fill="#62635D" text-anchor="end">01</text></g>
+    <rect x="20.5" y="48.5" width="260" height="128" fill="#EFEEE9" stroke="#D3D0C9"/>
+    <rect x="32" y="61" width="142" height="14" fill="url(#hatch)"/>
+    <rect x="32" y="85" width="237" height="10" fill="url(#hatch)"/>
+    <rect x="32" y="105" width="201" height="10" fill="url(#hatch)"/>
+    <rect x="32" y="125" width="218" height="10" fill="url(#hatch)"/>
+    <g font-family="Geist, sans-serif" fill="#1C1D1B" font-size="20" font-weight="600" letter-spacing="-0.5"><text x="20" y="208">A skeleton sized like the</text><text x="20" y="232">real content</text></g>
+    <g font-family="Geist, sans-serif" fill="#55564F" font-size="15"><text x="20" y="262">Nothing jumps when data arrives.</text><text x="20" y="282">That jump is your CLS score.</text></g>
+  </g>
+
+  <!-- 2 Empty -->
+  <g transform="translate(302 1)">
+    <use href="#cell-bg"/>
+    <g font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.6"><text x="20" y="32" fill="#1B6E43" font-weight="500">EMPTY</text><text x="281" y="32" fill="#62635D" text-anchor="end">02</text></g>
+    <rect x="20.5" y="48.5" width="260" height="128" fill="#EFEEE9" stroke="#D3D0C9"/>
+    <text x="150.5" y="100" font-family="Geist, sans-serif" font-size="16" font-weight="500" fill="#1C1D1B" text-anchor="middle">No results</text>
+    <rect x="86" y="114" width="129" height="32" fill="#1B6E43"/>
+    <text x="150.5" y="134" font-family="'Geist Mono', monospace" font-size="13" fill="#EFEEE9" text-anchor="middle">Clear filters</text>
+    <g font-family="Geist, sans-serif" fill="#1C1D1B" font-size="20" font-weight="600" letter-spacing="-0.5"><text x="20" y="208">“No results” plus a next</text><text x="20" y="232">action</text></g>
+    <g font-family="Geist, sans-serif" fill="#55564F" font-size="15"><text x="20" y="262">A blank region is a bug report</text><text x="20" y="282">waiting to happen.</text></g>
+  </g>
+
+  <!-- 3 Error -->
+  <g transform="translate(603 1)">
+    <use href="#cell-bg"/>
+    <g font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.6"><text x="20" y="32" fill="#1B6E43" font-weight="500">ERROR</text><text x="281" y="32" fill="#62635D" text-anchor="end">03</text></g>
+    <rect x="20.5" y="48.5" width="260" height="128" fill="#EFEEE9" stroke="#D3D0C9"/>
+    <text x="150.5" y="88" font-family="Geist, sans-serif" font-size="16" font-weight="500" fill="#1C1D1B" text-anchor="middle">Something went wrong</text>
+    <text x="150.5" y="110" font-family="'Geist Mono', monospace" font-size="12" fill="#62635D" text-anchor="middle">ref 7F3A-91C2</text>
+    <rect x="118" y="122" width="65" height="32" fill="#12241A"/>
+    <text x="150.5" y="142" font-family="'Geist Mono', monospace" font-size="13" fill="#EFEEE9" text-anchor="middle">Retry</text>
+    <g font-family="Geist, sans-serif" fill="#1C1D1B" font-size="20" font-weight="600" letter-spacing="-0.5"><text x="20" y="208">Retryable, with a</text><text x="20" y="232">correlation ID</text></g>
+    <g font-family="Geist, sans-serif" fill="#55564F" font-size="15"><text x="20" y="262">The user can give the ID to</text><text x="20" y="282">support.</text></g>
+  </g>
+
+  <!-- 4 Stale / partial -->
+  <g transform="translate(1 312)">
+    <use href="#cell-bg"/>
+    <g font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.6"><text x="20" y="32" fill="#1B6E43" font-weight="500">STALE / PARTIAL</text><text x="281" y="32" fill="#62635D" text-anchor="end">04</text></g>
+    <rect x="20.5" y="48.5" width="260" height="128" fill="#EFEEE9" stroke="#D3D0C9"/>
+    <text x="269" y="72" font-family="'Geist Mono', monospace" font-size="12" fill="#1B6E43" text-anchor="end">Updating…</text>
+    <rect x="32" y="88" width="237" height="10" fill="#D3D0C9"/>
+    <rect x="32" y="108" width="190" height="10" fill="#D3D0C9"/>
+    <rect x="32" y="128" width="213" height="10" fill="#D3D0C9"/>
+    <g font-family="Geist, sans-serif" fill="#1C1D1B" font-size="20" font-weight="600" letter-spacing="-0.5"><text x="20" y="208">Data shown while a</text><text x="20" y="232">refetch runs</text></g>
+    <g font-family="Geist, sans-serif" fill="#55564F" font-size="15"><text x="20" y="262">A subtle indicator, not a spinner</text><text x="20" y="282">that wipes the screen.</text></g>
+  </g>
+
+  <!-- 5 Unauthorized -->
+  <g transform="translate(302 312)">
+    <use href="#cell-bg"/>
+    <g font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.6"><text x="20" y="32" fill="#1B6E43" font-weight="500">UNAUTHORIZED</text><text x="281" y="32" fill="#62635D" text-anchor="end">05</text></g>
+    <rect x="20.5" y="48.5" width="260" height="128" fill="#EFEEE9" stroke="#D3D0C9"/>
+    <rect x="32" y="61" width="166" height="10" fill="#D3D0C9"/>
+    <rect x="32.5" y="81.5" width="236" height="82" fill="none" stroke="#6B6C66" stroke-dasharray="3 3"/>
+    <text x="150.5" y="127" font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.6" fill="#55564F" text-anchor="middle">NO ACCESS</text>
+    <g font-family="Geist, sans-serif" fill="#1C1D1B" font-size="20" font-weight="600" letter-spacing="-0.5"><text x="20" y="208">The page, but not</text><text x="20" y="232">this widget</text></g>
+    <g font-family="Geist, sans-serif" fill="#55564F" font-size="15"><text x="20" y="262">The user can see the page and not</text><text x="20" y="282">this part of it.</text></g>
+  </g>
+
+  <!-- 6 Success -->
+  <g transform="translate(603 312)">
+    <use href="#cell-bg"/>
+    <g font-family="'Geist Mono', monospace" font-size="12" letter-spacing="0.6"><text x="20" y="32" fill="#1B6E43" font-weight="500">SUCCESS</text><text x="281" y="32" fill="#62635D" text-anchor="end">06</text></g>
+    <rect x="20.5" y="48.5" width="260" height="128" fill="#EFEEE9" stroke="#D3D0C9"/>
+    <g font-family="Geist, sans-serif" font-size="14" fill="#1C1D1B"><text x="32" y="78">Ada Lovelace</text><text x="32" y="110">Alan Turing</text><text x="32" y="142">Grace Hopper</text></g>
+    <g font-family="'Geist Mono', monospace" font-size="12" fill="#62635D" text-anchor="end"><text x="269" y="78">admin</text><text x="269" y="110">member</text><text x="269" y="142">member</text></g>
+    <path d="M32 90.5H269M32 122.5H269" stroke="#D3D0C9"/>
+    <g font-family="Geist, sans-serif" fill="#1C1D1B" font-size="20" font-weight="600" letter-spacing="-0.5"><text x="20" y="208">The one everyone</text><text x="20" y="232">builds first</text></g>
+    <text x="20" y="262" font-family="Geist, sans-serif" fill="#55564F" font-size="15">Only one of six.</text>
+  </g>
+</svg>
